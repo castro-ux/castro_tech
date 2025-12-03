@@ -1,0 +1,149 @@
+
+/* ============================================
+   GLOBAL DARK NAVY THEME (Bootstrap Overrides)
+   ============================================ */
+
+:root {
+  --bs-body-bg: #0d1640;       /* dark body */
+  --bs-body-color: #e5e7eb;    /* light text */
+
+  --bs-link-color: #296ee8;    /* accent blue */
+  --bs-link-hover-color: #9b2dd1;
+
+  --bs-card-bg: #131b4b;
+  --bs-card-border-color: #23306a;
+
+  --bs-btn-bg: #296ee8;
+  --bs-btn-border-color: #296ee8;
+  --bs-btn-hover-bg: #1e4fbf;
+
+  --bs-gray-100: #1a254f;
+  --bs-gray-200: #23306a;
+  --bs-gray-300: #2c3a7a;
+}
+
+
+/* ============================================
+   HEADER + FOOTER (dark navy with white text)
+   ============================================ */
+
+/* Header (navbar) */
+nav.bg-white,
+.navbar.bg-white {
+  background-color: #0D1640 !important;
+}
+
+nav.bg-white a,
+.navbar.bg-white a,
+nav.bg-white .navbar-brand,
+.navbar.bg-white .navbar-brand {
+  color: #FFFFFF !important;
+}
+
+/* Footer */
+footer.bg-white {
+  background-color: #0D1640 !important;
+  color: #FFFFFF !important;
+}
+
+/* Footer links */
+footer.bg-white a {
+  color: #FFFFFF !important;
+}
+
+footer.bg-white a:hover {
+  color: #C9D3FA !important; /* lighter navy-white hover */
+}
+
+/* ============================================
+   DARKEN SECTIONS (About + Projects page)
+   ============================================ */
+
+/* Any "light" section becomes dark navy */
+.bg-light {
+  background-color: #0d1640 !important;
+  color: #e5e7eb !important;
+}
+
+/* Fix text inside darkened sections */
+.bg-light p,
+.bg-light span,
+.bg-light h1,
+.bg-light h2,
+.bg-light h3,
+.bg-light .lead,
+.bg-light .fw-light {
+  color: #e5e7eb !important;
+}
+
+/* Disable gradient backgrounds & make dark */
+.bg-gradient,
+.bg-gradient-primary-to-secondary {
+  background-image: none !important;
+  background-color: #0d1640 !important;
+  color: #e5e7eb !important;
+}
+
+/* ============================================
+   PROJECTS PAGE - DARK NAVY CARDS
+   ============================================ */
+
+.card {
+  background-color: #131b4b !important;
+  border: 1px solid #23306a !important;
+  color: #e5e7eb !important;
+}
+
+.card h4,
+.card h5,
+.card-title {
+  color: #ffffff !important;
+}
+
+.card p,
+.card .text-muted {
+  color: #e5e7eb !important;
+}
+
+/* Optional: darken border on project preview images */
+.card img {
+  border-color: #23306a !important;
+}
+
+
+/* ============================================
+   SINGLE PROJECT ARTICLE PAGE (Dark Navy)
+   ============================================ */
+
+/* Darken article page background */
+.project-article,
+section.bg-light,
+main.bg-light {
+  background-color: #0d1640 !important;
+  color: #e5e7eb !important;
+}
+
+/* Article headings */
+.project-article h1,
+.project-article h2,
+.project-article h3,
+.project-article h4 {
+  color: #ffffff !important;
+}
+
+/* Darken interior text */
+.project-article p,
+.project-article span,
+.project-article li {
+  color: #e5e7eb !important;
+}
+
+/* Darken article card wrapper (the white rounded box) */
+.project-article .card {
+  background-color: #131b4b !impor
+
+
+
+.name-white {
+    color: #ffffff !important;
+}

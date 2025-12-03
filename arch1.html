@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Leo Castro Project 1 - Docker Example" />
+    <meta name="author" content="Leo Castro" />
+    <title>Arch Installation Part 1</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-49S4JFVG49"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-49S4JFVG49');
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Core Theme CSS (includes Bootstrap) -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/dark.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+
+    <!-- Syntax Highlighting Theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css"
+    />
+      <style>
+      /* Inline hyperlinks (purple, bold, no underline) */
+      p a {
+	text-decoration: none !important;
+	font-weight: 700;
+	color: #9b2dd1;
+      }
+      p a:hover {
+	text-decoration: none !important;
+	opacity: 0.85;
+      }
+      /* Highlight.js comment color (bash)*/
+      .hljs-comment,
+      .hljs-quote {
+	color: #53b7ff !important;
+      }
+      /* Paragraph spacing */
+      p {
+	line-height: 1.65;
+      }
+      /* Code block styling */
+      .code-box pre {
+	background-color: #1b263b;                  /* navy background */
+	color: #f8f9fa;                             /* light text */
+	border-left: 4px solid #9b2dd1;             /* purple accent */
+	padding: 0rem 1rem;                         /* vertical fixed by line-height */
+	border-radius: 10px;
+	font-size: 0.95rem;
+	line-height: 1.3;
+	overflow-x: auto;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.15);     /* soft depth */
+      }
+      .code-box code {
+	background-color: transparent;
+	color: inherit;                             /* keep syntax highlighting */
+	font-family: "Fira Code", monospace;
+      }
+      
+      /* Back to Projects button */
+      .btn-back {
+	background-color: transparent !important;   /* no fill */
+	color: #ffffff !important;                  /* white text */
+	border: 2px solid #ffffff !important;       /* white border */
+	border-radius: 10px !important;             /* rounded pill */
+	padding: 10px 24px;
+	font-weight: 600;
+	text-decoration: none !important;
+	display: inline-block;
+	transition: background-color 0.2s ease, opacity 0.2s ease;
+      }
+      .btn-back:hover {
+	background-color: #25315a !important;       /* subtle navy */
+	border-color: #25315a !important;
+	opacity: 0.95;
+	text-decoration: none !important;
+      }
+      </style>
+  
+  </head>
+  <body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white py-3">
+        <div class="container px-5">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bolder navbar-brand-name">Leo Castro</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+          <!-- Page Content -->
+    <section class="py-5 project-article">
+       <div class="container px-5">
+       <h1 class="fw-bold text-center mb-4" style="color:#9b2dd1;">Arch Linux Installation: Part 1</h1>
+
+ <!-- Project Card -->
+      <div class="row gx-5 justify-content-center">
+	    <div class="col-lg-12 col-xl-10">
+	       <div class="article-content">
+
+      <!-- Article Meta. Everything below is now counted for word count -->
+      <div class="article-meta">
+	<div id="article-date">30 November 2025</div>
+	<div>
+	  <span id="article-word-count"></span>
+      &nbsp;·&nbsp;
+	   <span id="article-reading-time"></span>
+	</div>
+      </div>
+      <br>
+
+      <p>
+      It all started in March 2024 when I made my full-time switch to Fedora Sway Linux. I had previously installed Ubuntu flavors in the past, but they always ended up short-lived. I needed a reliable laptop for my Data Science coursework and purchased a refurbished Lenovo T470 laptop on Amazon. The thing is a tank! I was attempting to create a dual-boot partition, but accidentally wiped my drive, effectively saying goodbye to Windows 10. It was one of the best mistakes I made, forcing me to dive deep into Linux. 
+      </p>
+      <p>
+      Fast forward to September 2025, and I took the leap to installing Arch Linux (with the guided installer, of course). I had previously failed to install it on two previous attempts. I installed Hyprland and was quite pleased with the results. After two months of daily use, I decided to go the more complete route and install Arch Linux from scratch, using the manual method. This was all thanks to <a href="https://kubecraft.dev" target="_blank" rel="noopener noreferrer">KubeCraft</a>! I joined KubeCraft a month ago, and the sheer amount of knowledge I’ve gained is astonishing. It took a good week to understand what was going on under the hood. I failed a good ten times before I successfully installated Arch and was able to log-in. Due to short spurts I had between my AM/PM commute and late nights, I was bound to miss a letter or a step.
+      </p>
+      <p>
+      This article isn’t a substitute for how to manually install Arch Linux – there are many documented options available. The <a href="https://wiki.archlinux.org/title/Installation_guide" target="_blank" rel="noopener noreferrer">Arch Wiki</a> is the official and most comprehensive documentation source. I will break down the installation into two parts, as this is how I was meticulously breaking it down daily on my end. I have an hour-long train commute, and my hotspot is notoriously unstable, making it impossible to download the large pacstrap package.
+      <p>
+      <div class="card-body text-start">
+      <h4 class="fw-bold">Create a Bootable USB</h4>
+      <p>
+      Firstmost, acquire an installation image. It is recommended that you verify the <a href="https://archlinux.org/download/#checksums" target="_blank" rel="noopener noreferrer">signature</a> to prevent using a malicious image. Next, prepare your USB. Use the <code>lsblk</code> utility to find your USB. Look for something like <i>/dev/sdb</i>. Do not use the partition, sdb1, for example. Once formatted, locate your iso and make it bootable. It's also a good way to try different Linux flavors.
+      </p>
+      </div>
+
+      <div class="code-box mb-4">
+     <pre><code class="language-bash">
+# Unmount the USB before writing
+umount /dev/sdb*
+
+# Locate your iso image and flash it to the USB
+sudo dd if=arch-linux.iso of=/dev/sdb status=progress
+     </code></pre>
+   </div>
+
+
+      <div class="row align-items-start mb-4">
+	<!-- Text on the left -->
+	<div class="col-md-7">
+	  <h4 class="fw-bold">Connect to WiFi</h4>
+	  <p>
+	  During the pre-boot sequence, locate the key to access the BIOS settings. For my Lenovo T470, it’s <code>F2</code>. Select Arch Linux Install Medium from the GRUB boot menu. You’ll be greeted with the initial visualization to the right. First, we will need to connect to Wi-Fi or simply connect an Ethernet cable. Enter the <code>iwctl</code> utility to scan and connect to your Wi-Fi network. Replace <i>my-network-name</i> with the actual name of your network.
+	  </p>
+	</div>
+
+	<!-- Image on the right -->
+	<div class="col-md-5 text-md-end">
+	   <img src="assets/arch1/boot_install.png"
+	      alt="Arch Linux boot screen"
+	      class="article-img-full">
+	</div>
+      </div>
+
+      <div class="code-box mb-4">
+     <pre><code class="language-bash">
+# Internet wireless control utility
+station wlan0 scan
+station wlan0 show
+station wlan0 get-networks
+
+# Locate your network and enter passphrase when prompted.
+station wlan0 connect "my-network-name"
+     </code></pre>
+   </div>
+     
+	   <p>
+	   <code>exit</code> the iwtl utility and confirm connection by using the <code>ping</code> command in root. Set a root password and your local time. </p>
+	   <div class="code-box mb-4">
+	       <pre><code class="language-bash">
+# Password and local time setup 
+passwd
+timedatectl
+	       </code></pre>
+	       
+	       <div class="card-body text-start">
+      <h4 class="fw-bold">Partition 1: EFI Boot</h4>
+      <p>
+      Let's make the EFI partition. This partition acts as the storage for the UEFI boot loaders, applications, and drivers to be launched by the firmware. This is mandatory for UEFI to boot. We will use <code>lbslk</code> to identify our primary hard drives. It could be dev/nvme0 or dev/sda. In my case, it's the latter. Run <code>fdisk /dev/sda</code> to initiate the fdisk utility. Type <code>g</code> to create a new GPT partition table, followed by <code>n</code> to create a new partition. Select partition <code>1</code> and <code>+1G</code> to create a partition of 1 Gigabyte, more than sufficient for the EFI system. Then, specify the filesystem type by typing <code>t</code> and selecting <code>1</code> for <i>EFI</i>. 
+      </p>
+      <p>
+      <i>Note: <code>L</code> display all the available partition types.</i>
+      </div>
+
+      <h4 class="fw-bold">Partition 2: Logical Volume Manager (LVM)</h4>
+      <p>
+      Varous partitioning schemes exist depending on your desired flexibility, speed, and security. I chose the LVM partition for it dynamic ability to create and resize volumes and integrate it with the LUKS encryption. Read about the <a href="https://wiki.archlinux.org/title/Dm-crypt/Encrypting_an_entire_system#LVM_on_LUKS" target="_blank" rel="noopener noreferrer">encryption</a> options on the Wiki page.
+      </p>
+      <p>
+      Start by creating a new partition by typing <code>n</code>. Hit <code>Enter</code> to accept the new default partition, first sector, and the last sector when prompted. Next, type <code>t</code> to change the partition and select <code>44</code> to choose the Linux LVM type. Then, <code>p</code> prints the partition table and <code>w</code> writes changes to the disk. Confirm the new partition types using <code>lsblk</code> and/or <code>fdisk -l</code>.
+      </p>
+      </div> 
+
+      <div class="row align-items-start mb-5">
+	 <!-- LEFT SIDE -->
+	 <div class="col-md-5">
+
+	    <h4 class="fw-bold">Cryptsetup</h4>
+	    <p>
+	    The next step is to encrypt the partitions using the Linux Unified Key Setup (LUKS). LUKS essentially creates an encrypted container on /dev/sda, employing a 256-bit key size to encrypt the data. The <code>cryptsetup</code> utility then opens this container for use. Then, create a physical volume (PV) and confirm the setup with lsblk.   
+	    </p>
+	 </div>
+
+	 <!-- RIGHT SIDE (larger image) -->
+	 <div class="col-md-7 text-md-end">
+	    <img src="assets/arch1/cryptlvm.png"
+		 alt="lsblk output"
+		 class="article-img-full img-fluid">
+	 </div>
+      </div>
+      <!-- Code block below the row -->
+      <div class="code-box mb-4">
+	 <pre><code class="language-bash">
+cryptsetup luksFormat /dev/sda2
+cryptsetup open /dev/sda2 cryptlvm
+pvcreate /dev/mapper/cryptlvm
+lsblk
+	 </code></pre>
+      </div>
+
+
+      <h4 class="fw-bold">Create Physical Volumes</h4>
+      <p>
+      To finalize the partitioning, we will create individual logical volumes within our volume group, which we will label <i>archie</i>. We will create a root, swap, and home logical volume with sizes tailored to my own laptop. A swap partition prevents <i> out of memory</i> conditions by providing virtual memory. Without swap, the Linux kernel will automatically attempt to free up memory by killing processes. Change your volume sizes as it pertains to your desired configuration.   
+      </p>
+      <div class="code-box mb-4">
+	       <pre><code class="language-bash"> 
+vgcreate archie  /dev/mapper/cryptlvm
+lvcreate -L 32G archie -n root
+lvcreate -L 16G archie -n swap
+lvcreate -L 400G archie -n home
+	       </code></pre>
+      </div>
+      
+       <h4 class="fw-bold">Format the File Systems</h4>
+      <p>
+      Now we format the partitions using the EXT4 filesystems for storage. The EFI partition requires FAT32 in order for the system to reboot.  
+      </p>
+      <div class="code-box mb-4">
+	       <pre><code class="language-bash"> 
+mkfs.ext4 /dev/archie/root
+mkfs.ext4 /dev/archie/home
+mkswap /dev/archie/swap
+
+# Make FAT32 system
+mkfs.fat -F32 /dev/sda1
+	       </code></pre>
+      </div>
+
+
+
+      <div class="row align-items-start mb-5">
+	 <!-- LEFT SIDE -->
+	 <div class="col-md-5">
+	    <h4 class="fw-bold">Mounting</h4>
+	    <p>
+      Now, we mount the partitions for the installation process. The mount order is:
+      <ol>
+	<li>root</li>
+	<li>boot</li>
+	<li>swap</li>
+      </ol>
+      </p>
+	 </div>
+
+	 <!-- RIGHT SIDE (larger image) -->
+	 <div class="col-md-7 text-md-end">
+	    <img src="assets/arch1/mount.png"
+		 alt="lsblk output"
+		 class="article-img-full img-fluid">
+	 </div>
+      </div>
+      <!-- Code block below the row -->
+      <div class="code-box mb-4">
+	 <pre><code class="language-bash">
+mount /dev/archie/root  /mnt
+mount --mkdir /dev/sda1  /mnt/boot
+swapon /dev/archie/swap
+lsblk
+	 </code></pre>
+      </div>
+
+
+   <div class="row align-items-start mb-5">
+	 <!-- LEFT SIDE -->
+	 <div class="col-md-5">
+	    <h4 class="fw-bold">Base Package and Fstab</h4>
+	    <p>
+	    Finally, install the base package and configure the filesystem. It will take a few minutes due to the size. Once installed, we will use fstab to generate the filesystem table. Use the <code> cat /mnt/etc/fstab</code> command to confirm that the partitions are in the correct mouting order as detailed in the previous step. Then, <code>arch-chroot /mnt</code> to switch to the new system environment and finally <code>ls -l</code> to see the system directory. Don't unplug your USB yet!  
+	    </p>
+	 </div>
+
+	 <!-- RIGHT SIDE (larger image) -->
+	 <div class="col-md-7 text-md-end">
+	    <img src="assets/arch1/chroot_mount.png"
+		 alt="lsblk output"
+		 class="article-img-full img-fluid">
+	 </div>
+      </div>
+      <!-- Code block below the row -->
+      <div class="code-box mb-4">
+	 <pre><code class="language-bash">
+# Install base package
+pacstrap -K /mnt base linux linux-firmware
+
+# Perform fstab
+genfstab -U /mnt >> /mnt/etc/fstab
+
+# Enter your installed Linux system 
+arch-chroot /mnt 
+ls -l
+	 </code></pre>
+      </div>
+	       <p>
+	       This concludes part one of the installation. See you in the second series for the final installation.  
+	       </p>
+	   </div>
+	 </div>
+</section>
+
+  </div> <!-- END article-content -->
+
+</div>
+
+            <!-- Back Button -->
+	 <div class="text-center">
+	     <a class="btn-back" href="projects.html">
+	     ← Back to Projects
+	   </a>
+	 </div>
+       </div>
+     </div>
+   </div>
+ </main>
+ <!-- Footer -->
+ <footer class="bg-white py-4 mt-auto">
+   <div class="container px-5">
+     <div
+       class="row align-items-center justify-content-between flex-column flex-sm-row"
+     >
+       <div class="col-auto">
+	 <div class="small m-0">&copy; Leo Castro 2025</div>
+       </div>
+       <div class="col-auto">
+	  <a class="small" href="index.html">Home</a>
+ 	  <span class="mx-1">&middot;</span>
+	  <a class="small" href="projects.html">Projects</a>
+       </div>
+     </div>
+   </div>
+ </footer>
+
+
+    <!-- Scripts -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // 1. Get article text
+  const articleText = document.querySelector(".article-content").innerText;
+
+  // 2. Count words
+  const wordCount = articleText.trim().split(/\s+/).length;
+
+  // 3. Reading time (average 200 words/min)
+  const readingTime = Math.ceil(wordCount / 200);
+
+  // 4. Insert values into the page
+  document.getElementById("article-reading-time").textContent =
+    `${readingTime} min read`;
+
+  document.getElementById("article-word-count").textContent =
+    `${wordCount} words`;
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
+

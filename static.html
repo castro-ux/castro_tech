@@ -9,260 +9,278 @@
     <meta name="description" content="Leo Castro Project 1 - Docker Example" />
     <meta name="author" content="Leo Castro" />
     <title>Static Website with Nginx</title>
-
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-
     <!-- Google Font -->
     <link
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-
     <!-- Bootstrap Icons -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
       rel="stylesheet"
     />
-
     <!-- Core Theme CSS (includes Bootstrap) -->
     <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/dark.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
 
     <!-- Syntax Highlighting Theme -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css"
     />
-
-    <style>
-      /* Optional: keep code boxes visually consistent with your cards */
-      .code-box pre {
-        background-color: #1e1e1e;
-        color: #4434;
-        padding: 1rem;
-        border-radius: 0.5rem;
-        overflow-x: auto;
-        font-size: 1.5rem;
+      <style>
+      /* Inline hyperlinks (purple, bold, no underline) */
+      p a {
+	text-decoration: none !important;
+	font-weight: 700;
+	color: #9b2dd1;
       }
-      /*line height spacing in paragraphs */
-     p {
-	  line-height: 1.65;
-	}
-  .code-box pre {
-    background-color: #1b263b;       /* dark navy background */
-    color: #f8f9fa;                  /* light text for contrast */
-    border-left: 4px solid #9b2dd1;  /* purple accent line to match header */
-    line-height: 2.5; 
-    padding: 0rem 1rem 0rem 1rem; /* top | right | bottom | left */ 
-    border-radius: 10px;
-    font-size: 0.95rem;
-    line-height: 1.3;
-    overflow-x: auto;                /* prevent overflow on smaller screens */
-    height: auto;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* soft shadow for depth */
-  }
-  .code-box code {
-    background-color: transparent;
-    color: inherit;                  /* keeps text consistent */
-    font-family: 'Fira Code', monospace; /* optional: clean coding font */
-  }
-  .inline-boxed-code {
-    background-color: #eaeaea;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    padding: 2px 6px;
-    font-family: monospace;
-    font-size: 0.95rem;
-    color: #333;
-  }
-  img{
-	float:right;
-	margin:10px;
-    }
-    </style>
+      p a:hover {
+	text-decoration: none !important;
+	opacity: 0.85;
+      }
+      /* Highlight.js comment color (bash)*/
+      .hljs-comment,
+      .hljs-quote {
+	color: #53b7ff !important;
+      }
+      /* Paragraph spacing */
+      p {
+	line-height: 1.65;
+      }
+      /* Code block styling */
+      .code-box pre {
+	background-color: #1b263b;                  /* navy background */
+	color: #f8f9fa;                             /* light text */
+	border-left: 4px solid #9b2dd1;             /* purple accent */
+	padding: 0rem 1rem;                         /* vertical fixed by line-height */
+	border-radius: 10px;
+	font-size: 0.95rem;
+	line-height: 1.3;
+	overflow-x: auto;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.15);     /* soft depth */
+      }
+      .code-box code {
+	background-color: transparent;
+	color: inherit;                             /* keep syntax highlighting */
+	font-family: "Fira Code", monospace;
+      }
+      /* Image spacing */
+      img {
+	float: right;
+	margin: 10px;
+      }
+      /* Back to Projects button */
+      .btn-back {
+	background-color: transparent !important;   /* no fill */
+	color: #ffffff !important;                  /* white text */
+	border: 2px solid #ffffff !important;       /* white border */
+	border-radius: 10px !important;             /* rounded pill */
+	padding: 10px 24px;
+	font-weight: 600;
+	text-decoration: none !important;
+	display: inline-block;
+	transition: background-color 0.2s ease, opacity 0.2s ease;
+      }
+      .btn-back:hover {
+	background-color: #25315a !important;       /* subtle navy */
+	border-color: #25315a !important;
+	opacity: 0.95;
+	text-decoration: none !important;
+      }
+      </style>
+  
   </head>
-
   <body class="d-flex flex-column h-100 bg-light">
     <main class="flex-shrink-0">
-      <!-- Navigation -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-        <div class="container px-5">
-          <a class="navbar-brand" href="index.html"
-            ><span class="fw-bolder text-primary">Leo Castro</span></a
-          >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse"
-            id="navbarSupportedContent"
-          >
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="projects.html">Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
 
-      <!-- Page Content -->
-    <section class="py-5">
-  <div class="container px-5">
-    <h1 class="fw-bold text-center mb-4" style="color:#9b2dd1;">
-      Static Website with Nginx and Docker
-    </h1>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white py-3">
+        <div class="container px-5">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bolder navbar-brand-name">Leo Castro</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+          <!-- Page Content -->
+    <section class="py-5 project-article">
+       <div class="container px-5">
+	  <h1 class="fw-bold text-center mb-4" style="color:#9b2dd1;">Static Website with Nginx and Docker</h1>
 
  <!-- Project Card -->
-<div class="row gx-5 justify-content-center">
-      <div class="col-lg-12 col-xl-10">
+      <div class="row gx-5 justify-content-center">
+	    <div class="col-lg-12 col-xl-10">
 
-        <!-- Docker Project Example Section -->
-        <section>
-          <div class="card shadow border-0 rounded-4 mb-5">
-            <div class="card-body p-5">
-              <div class="text-center mb-4"></div>
-	      <span style="font-weight:bold; font-size:16px;color: #9b2dd1;">
-		 11.02.2025
-	      </span>
-	      <br><br>
-	      <p>
-		Having just graduated, I wasn’t quite sure where to start showcasing my work. While taking my Data Science SQL course, I followed <a href="https://www.youtube.com/@amigoscode" target="_blank" rel="noopener noreferrer">@amigoscode </a>
-		tutorials alongside the class and found him to be an excellent instructor. I had bookedmarked Nelson's and Nana's <a href="https://www.youtube.com/watch?v=Wf2eSG3owoA" target="_blank" rel="noopener noreferrer">Docker and Kubernetes – 
-		Full Course for Beginners </a> a while back and finally had the time to finish watching it. Now was the perfect time to dive into containerization and build a personal website. I used 
-		a <a href="https://startbootstrap.com" target="_blank" rel="noopener noreferrer">Bootstrap template</a> to streamline the development 
-		process.	     
-	      </p>
 
-	      <p>
-	      I built and deployed a static webpage using Nginx as the web server. The official <a href=" https://hub.docker.com/_/nginxNginx" target="_blank" rel="noopener noreferrer"> Nginx Docker </a>image 
-	      documentation is a great reference for creating and customizing configurations. Nginx  
-	      functions as a reverse proxy and web server that supports HTTP, HTTPS, SMTP, POP3, and IMAP protocols, while also providing caching capabilitie.	
-	      </p>
-	      <p>
-	      This is more of my personal overview of running a setup than an actual tutorial. Below is an overview of the basic git commands. It seems scary at first, but once you have done it a number of 
-	      times, it becomes a breeze.
-	      </p>
-	   
-	      <!-- Image on Top, Text Below -->
-	      <div class="card border-0 text-center my-3">
-	      <!-- Image on top -->
-	      <img src="assets/git_diagram.png" 
-		   alt="Git diagram" 
-		   class="card-img-top mx-auto d-block" 
-		   style="max-width:410px; height:auto;">
+      <!-- Article Meta -->
+      <div class="article-meta">
+	<div id="article-date">02 November 2025</div>
+	<div>
+	  <span id="article-word-count"></span>
+      &nbsp;·&nbsp;
+	   <span id="article-reading-time"></span>
+	</div>
+      </div>
+      <br>
 
-	      <!-- Text content below -->
-	      <div class="card-body text-start">
-	      <h4 class="fw-bold">Exposing Port</h4>
-	      <p>
-	      I then exposed my directory contents to an external port and opened my browser to <code class="inline-boxed-code">http://localhost:8000</code>. Name your container <i>custom_name</i> and the 
-	      image <i> some-image.</i> 
-	      </p>
-       
-	      <div class="code-box mb-4">
-		  <pre><code class="language-bash">
+      <p>
+       Having just graduated, I wasn’t quite sure where to start showcasing my work. While taking my Data Science SQL course, I followed <a href="https://www.youtube.com/@amigoscode" target="_blank" rel="noopener noreferrer">@amigoscode </a>
+       tutorials alongside the class and found him to be an excellent instructor. I had bookedmarked Nelson's and Nana's <a href="https://www.youtube.com/watch?v=Wf2eSG3owoA" target="_blank" rel="noopener noreferrer">Docker and Kubernetes – 
+       Full Course for Beginners </a> a while back and finally had the time to finish watching it. Now was the perfect time to dive into containerization and build a personal website. I used 
+       a <a href="https://startbootstrap.com" target="_blank" rel="noopener noreferrer">Bootstrap template</a> to streamline the development 
+       process.	     
+     </p>
+
+     <p>
+     I built and deployed a static webpage using Nginx as the web server. The official <a href=" https://hub.docker.com/_/nginxNginx" target="_blank" rel="noopener noreferrer"> Nginx Docker </a>image 
+     documentation is a great reference for creating and customizing configurations. Nginx  
+     functions as a reverse proxy and web server that supports HTTP, HTTPS, SMTP, POP3, and IMAP protocols, while also providing caching capabilitie.	
+     </p>
+     <p>
+     This is more of my personal overview of running a setup than an actual tutorial. Below is an overview of the basic git commands. It seems scary at first, but once you have done it a number of 
+     times, it becomes a breeze.
+     </p>
+  
+     <!-- Image on Top, Text Below -->
+     <div class="card border-0 text-center my-3">
+     <!-- Image on top -->
+     <img src="assets/static/git_pull.png" 
+	  alt="Git diagram" 
+	  class="card-img-top mx-auto d-block" 
+	  style="max-width:410px; height:auto;">
+     <br>
+     <!-- Text content below -->
+     <div class="card-body text-start">
+     <h4 class="fw-bold">Exposing Port</h4>
+     <p>
+     I then exposed my directory contents to an external port and opened my browser to <code>http://localhost:8000</code>. Name your container <i>custom_name</i> and the 
+     image <i> some-image.</i> 
+     </p>
+
+     <div class="code-box mb-4">
+	 <pre><code class="language-bash">
 # create Docker image 
 docker run --name custom_name -d -p 8000:80 some-image
-		  </code></pre>
-		  </code></pre>
+	 </code></pre>
 
-		  <h4 class="fw-bold">Enter Container Shell</h4>
-		  <p>
-		  If you want to view your directory inside your container, the <code class="inline-boxed-code">docker exec</code> commands allows entry using <code class="inline-boxed-code">sh</code>. 
-		  </p>
+	 <h4 class="fw-bold">Enter Container Shell</h4>
+	 <p>
+	 If you want to view your directory inside your container, the <code>docker exec</code> commands allows entry using <code>sh</code>. 
+	 </p>
 
-                  <div class="code-box mb-4">
-                    <pre><code class="language-bash">
+	 <div class="code-box mb-4">
+	   <pre><code class="language-bash">
 # enter Docker interactive mode
 docker exec -it some-image-nginx sh 
 
 # Docker root
 ls -al 
 cd usr/share/nginx/html
-		    </code></pre>
-		    <h4 class="fw-bold">Commit and Push</h4>
-		    <p>
-		    I used Github Pages to publish my static webpage. After setting up my SSH key, I was able to commit and push changes directly from my local directory to Github.
-		    </p>
-                  
-		    <div class="code-box mb-4">
-			<pre><code class="language-bash">
+	   </code></pre>
+	   <h4 class="fw-bold">Commit and Push</h4>
+	   <p>
+	   I used Github Pages to publish my static webpage. After setting up my SSH key, I was able to commit and push changes directly from my local directory to Github.
+	   </p>
+	 
+	   <div class="code-box mb-4">
+	       <pre><code class="language-bash">
 # Commit and push to main or master
 git add . 
 git commit -m “description” 
 git push -u origin main 
-			</code></pre>
-			<br>
-			<p>
-			The above is a simplistic overview, but in reality it took about a week of of playing with Docker and Git commands. CSS and HTML editing took another week, though the Bootstrap 
-			documentation and web searches facilitated this. I used ChatGP intermittently, but it just turned out be a huge disaster. I don't always find it reliable and gives you word salad. At 
-			one point, I contemplated creating a Next.js or Flask app with postgres for the <i>Contact Me</i> page, but opted to use formspree.io as I just needed to get the website up and 
-			running. That could be for a future post. I also created a .gitignore file to keep unnecessary files out of version control as I continue building new projects.
-			</p>
+	       </code></pre>
+	       <br>
+	       <p>
+	       The above is a simplistic overview, but in reality it took about a week of of playing with Docker and Git commands. CSS and HTML editing took another week, though the Bootstrap 
+	       documentation and web searches facilitated this. I used ChatGP intermittently, but it just turned out be a huge disaster. I don't always find it reliable and gives you word salad. At 
+	       one point, I contemplated creating a Next.js or Flask app with postgres for the <i>Contact Me</i> page, but opted to use formspree.io as I just needed to get the website up and 
+	       running. That could be for a future post. I also created a .gitignore file to keep unnecessary files out of version control as I continue building new projects.
+	       </p>
 
-			<p>
-			Overall, this was a great foundational project to start with. I’ve worked with Docker before, but only at a surface level. Being an Arch user, I’m comfortable working from the 
-			terminal, but my Neovim workflow improved significantly throughout this project. I did get sidetracked starting another project before circling back to complete this one. There were 
-			plenty of headaches along the way trying to get everything fully implemented, but that’s the whole point of building projects—you learn the most by troubleshooting when things go wrong.
-			</p>
-
-			<p>
-			Thanks for reading if you made it this far!
-			</p>
-		    </div>
-		  </div>
-	</section>
+	       <p>
+	       Overall, this was a great foundational project to start with. I’ve worked with Docker before, but only at a surface level. Being an Arch user, I’m comfortable working from the 
+	       terminal, but my Neovim workflow improved significantly throughout this project. I did get sidetracked starting another project before circling back to complete this one. There were 
+	       plenty of headaches along the way trying to get everything fully implemented, but that’s the whole point of building projects—you learn the most by troubleshooting when things go wrong.
+	       </p>
+	       <p>
+	       Thanks for reading if you made it this far! Click <a href="https://castro-ux.github.io/web/ target="_blank" rel="noopener noreferrer">here</a> for the initial version of my blog.
+	       </p>
+	   </div>
+	 </div>
+</section>
 
             <!-- Back Button -->
-        
-	    <div class="text-center">
-            
-		<a class="btn btn-primary px-4 py-2 fw-semibold" href="projects.html">
-                ← Back to Projects
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </main>
+	 <div class="text-center">
+	     <a class="btn-back" href="projects.html">
+	     ← Back to Projects
+	   </a>
+	 </div>
+       </div>
+     </div>
+   </div>
+ </main>
+ <!-- Footer -->
+ <footer class="bg-white py-4 mt-auto">
+   <div class="container px-5">
+     <div
+       class="row align-items-center justify-content-between flex-column flex-sm-row"
+     >
+       <div class="col-auto">
+	 <div class="small m-0">&copy; Leo Castro 2025</div>
+       </div>
+       <div class="col-auto">
+	  <a class="small" href="index.html">Home</a>
+ 	  <span class="mx-1">&middot;</span>
+	  <a class="small" href="projects.html">Projects</a>
+       </div>
+     </div>
+   </div>
+ </footer>
 
-    <!-- Footer -->
-    <footer class="bg-white py-4 mt-auto">
-      <div class="container px-5">
-        <div
-          class="row align-items-center justify-content-between flex-column flex-sm-row"
-        >
-          <div class="col-auto">
-            <div class="small m-0">&copy; Leo Castro 2025</div>
-          </div>
-          <div class="col-auto">
-            <a class="small" href="projects.html">Projects</a>
-            <span class="mx-1">&middot;</span>
-            <a class="small" href="index.html">Home</a>
-            <span class="mx-1">&middot;</span>
-            <a class="small" href="contact.html">Contact</a>
-          </div>
-        </div>
-      </div>
-    </footer>
 
     <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // 1. Get article text
+  const articleText = document.querySelector(".card-body").innerText;
+
+  // 2. Count words
+  const wordCount = articleText.trim().split(/\s+/).length;
+
+  // 3. Reading time (average 200 words/min)
+  const readingTime = Math.ceil(wordCount / 200);
+
+  // 4. Insert values into the page
+  document.getElementById("article-reading-time").textContent =
+    `${readingTime} min read`;
+
+  document.getElementById("article-word-count").textContent =
+    `${wordCount} words`;
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <script>hljs.highlightAll();</script>
     <script src="js/scripts.js"></script>

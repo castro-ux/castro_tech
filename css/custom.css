@@ -1,0 +1,94 @@
+
+/* --------------------------------------------------
+   GLOBAL LINK HOVER (consistent across the website)
+-------------------------------------------------- */
+a:hover {
+    text-decoration: none !important;
+    opacity: 0.85;
+}
+
+
+/* --------------------------------------------------
+   NAVBAR (HEADER) LINK STYLING
+-------------------------------------------------- */
+.navbar .nav-link {
+    color: #ffffff !important;          /* white */
+    text-decoration: none !important;   /* remove underline */
+    font-weight: 600;                   /* bold-ish like footer */
+    font-size: 1rem;                    /* clean, consistent sizing */
+}
+
+.navbar .nav-link:hover {
+    text-decoration: none !important;
+    opacity: 0.85;                      /* subtle fade on hover */
+}
+
+
+/* -----------------------------------------
+   Article Meta (date, word count, reading time)
+----------------------------------------- */
+.article-meta {
+    color: #aaadb0 !important;      /* soft gray text color */
+    font-weight: 600;               /* slightly bold */
+    font-size: 16px;                /* readable size */
+}
+
+#article-word-count,
+#article-reading-time {
+    color: #aaadb0 !important;
+}
+
+/* --------------------------------------------------
+   FOOTER STYLING
+-------------------------------------------------- */
+
+/* spacing above footer so it doesn’t sit tight against page */
+footer {
+    margin-top: 40px;
+}
+
+/* footer link color + remove underline + size */
+footer a {
+    color: #ffffff !important;          /* white */
+    text-decoration: none !important;   /* remove underline */
+    font-weight: 600;                   /* slight bold */
+    font-size: 1rem !important;         /* readable size */
+}
+
+/* hover effect consistent with header */
+footer a:hover {
+    text-decoration: none !important;
+    opacity: 0.85;
+}
+
+.project-article {
+    padding-bottom: 60px;  /* Adds spacing above footer */
+}
+
+.btn-back {
+    margin-bottom: 60px; /* Increase space above the footer */
+}
+
+/* Prevent article images from floating next to code blocks */
+.project-article img {
+    float: none !important;
+    display: block;
+    margin: 20px auto !important; /* centered + spacing */
+}
+
+/* Ensure layout resets after floated elements */
+.code-box {
+    clear: both;
+}
+
+/* screenshots stretch to code-box dimensions */
+.article-img-full {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: none;
+    box-shadow: none;
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+

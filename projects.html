@@ -6,6 +6,16 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>Projects</title>
+
+       <!-- Google tag (gtag.js) -->
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-49S4JFVG49"></script>
+       <script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	  gtag('config', 'G-49S4JFVG49');
+       </script>
+
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Custom Google font-->
@@ -16,147 +26,171 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+	<link href="css/dark.css" rel="stylesheet" />
+	<link href="css/custom.css" rel="stylesheet" />
     </head>
     <body class="d-flex flex-column h-100 bg-light">
         <main class="flex-shrink-0">
-            <!-- Navigation-->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-                <div class="container px-5">
-                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary">Leo Castro</span></a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
-                            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                            <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
-                            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- Projects Section-->
-            <section class="py-5">
-                <div class="container px-5 mb-5">
-                    <div class="text-center mb-5">
-                        <h1 class="display-5 fw-bolder mb-0"><span class="text-gradient d-inline">Projects</span></h1>
-                    </div>
-                    <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-11 col-xl-9 col-xxl-8">
-			    <!--add some text, otherwise delete-->
-                                <p class="lead fw-light mb-4"> Below is a small collection of projects that highlight the skills I’ve developed, and continue to refine, as I merge clinical insight with data-driven decisions. Enjoy exploring!</p>
+          
 
-			    <!-- Project Card 1 -->
-			    <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-			      <div class="card-body p-0">
-				<div class="d-flex align-items-center">
-				  
-				  <!-- Left text column -->
-				  <div class="p-5">
-				    <h2 style="color:#292fec; font-size:1.9rem;">Static Website</h2>
-				    <p>
-				      Deployed a static website on Nginx running inside an Alpine-based Docker image.
-				    </p>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white py-3">
+        <div class="container px-5">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bolder navbar-brand-name">Leo Castro</span>
+            </a>
 
-				    <!-- Skills line -->
-				    <div style="margin-top: 0.5em;">
-				      <b><i style="color:#292fec; font-weight:400; font-size:1.0rem; letter-spacing:0.3px;">
-					Skills: Docker, Git, HTML, CSS, Nginx, Neovim, GitHub
-				      </i></b>
-				    </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-				    <!-- Button below Skills -->
-				    <a href="static.html" class="btn btn-primary btn-sm mt-4">View Project →</a>
-				  </div>
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Projects Section-->
+    <section class="py-5">
+       <div class="container px-5 mb-5">
+	   <div class="text-center mb-5">
+	      <h1 class="display-5 fw-bolder mb-0">
+		<span style="color:#FFFFFF;">Projects</span>
+	    </h1>
+	   </div>
+	   <div class="row gx-5 justify-content-center">
+	       <div class="col-lg-11 col-xl-9 col-xxl-8">
+		       <p class="lead fw-light mb-4"> Below is a small collection of projects that highlight the skills I’ve developed, and continue to refine, as I merge clinical insight with data-driven decisions. Enjoy exploring!</p>
 
-				  <!-- Right image column -->
-				  <div class="project-img-wrapper">
-				    <a href="1_project.html">
-				      <img class="img-fluid project-img" src="assets/page_screenshot.png" alt="Project 1 preview">
-				    </a>
-				  </div>
+	       <!-- Project Card 1 -->
+	       <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project-card">
+		 <div class="card-body p-0 d-flex flex-row">
 
-				</div> <!-- closes d-flex -->
-			      </div>   <!-- closes card-body -->
-			    </div>     <!-- closes card -->
+		   <!-- Left text column -->
+		   <div class="p-4 d-flex flex-column flex-fill">
+		      <h2 style="font-size:1.9rem;">
+			 <a href="static.html"
+			    style="color:#ffffff; text-decoration:none;">Static Website </a>
+		      </h2>
+		      <br>
+		     <p>
+		       Deployed a static website on Nginx running inside an Alpine-based Docker image.
+		     </p>
 
+		     <div class="tag-container">
+		       <span class="tag-pill">Docker</span>
+		       <span class="tag-pill">Git</span>
+		       <span class="tag-pill">Nginx</span>
+		       <span class="tag-pill">GitHub</span>
+		       <span class="tag-pill">HTML</span>
+		     </div>
+		   </div>
 
-			    <!-- Project Card 2 -->
-			    <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-			      <div class="card-body p-0">
-				<div class="d-flex align-items-center">
+		   <!-- Right image column -->
+		   <div class="project-img-wrapper">
+		     <a href="static.html">
+		       <img class="img-fluid project-img"
+			    src="assets/projects_page1/home_screenshot.png"
+			    alt="Project 1 preview">
+		     </a>
+		   </div>
 
-				  <!-- Left text column -->
-				  <div class="p-5">
-				    <h2 style="color:#292fec; font-size:1.9rem;">Adventure Works Bike Sales</h2>
-				    <p>
-				      Currently in development. Hoping to finish in the next two weeks during my commute :}.
-				    </p>
-
-				    <!-- Skills line -->
-				    <div style="margin-top: 0.5em;">
-				      <b><i style="color:#292fec; font-weight:400; font-size:1.0rem; letter-spacing:0.3px;">
-					Skills: Power BI, Visualizations
-				      </i></b>
-				    </div>
-
-				    <!-- Button below Skills -->
-				    <a href="projects.html" class="btn btn-primary btn-sm mt-3">View Project →</a>
-				  </div>
-
-				  <!-- Right image column -->
-				  <div class="project-img-wrapper">
-				    <a href="projects.html">
-				      <img class="img-fluid project-img" src="assets/bike.png" alt="Bike project preview">
-				    </a>
-				  </div>
-
-				</div> <!-- closes d-flex -->
-			      </div>   <!-- closes card-body -->
-			    </div>     <!-- closes card -->
+		 </div>
+	       </div>
 
 
-			    <!-- Project Card 3 -->
-			    <div class="card overflow-hidden shadow rounded-4 border-0 mb-5">
-			      <div class="card-body p-0">
-				<div class="d-flex align-items-center">
+	       <!-- Project Card 2 -->
+	       <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project-card">
+		 <div class="card-body p-0 d-flex flex-row">
 
-				  <!-- Left text column -->
-				  <div class="p-5">
-				    <h2 style="color:#292fec; font-size:1.9rem;">Machine Learning</h2>
-				    <p>
-				      Unsure, but maybe an ML project or a data challenge feature.
-				    </p>
+		   <!-- Left text column -->
+		   <div class="p-4 d-flex flex-column flex-fill">
+		      <h2 style="font-size:1.9rem;">
+			 <a href="arch1.html"
+			    style="color:#ffffff; text-decoration:none;">Arch Linux Install: Part 1</a>
+		      </h2>
+		      <br>
+		     <p>
+		     Let's take a deep dive into the world of Arch Linux... but from scratch!
+		     </p>
 
-				    <!-- Skills line -->
-				    <div style="margin-top: 0.5em;">
-				      <b><i style="color:#292fec; font-weight:400; font-size:1.0rem; letter-spacing:0.3px;">
-					Skills: TBD
-				      </i></b>
-				    </div>
+		     <div class="tag-container">
+		       <span class="tag-pill">Linux</span>
+		       <span class="tag-pill">Shell</span>
+		       <span class="tag-pill">Neovim</span>
+		     </div>
+		   </div>
 
-				    <!-- Button below Skills -->
-				    <a href="projects.html" class="btn btn-primary btn-sm mt-3">View Project →</a>
-				  </div>
+		   <!-- Right image column -->
+		   <div class="project-img-wrapper">
+		     <a href="arch1.html">
+		       <img class="img-fluid project-img"
+			    src="assets/projects_page1/penguin.png"
+			    alt="Arch Linux Install 1">
+		     </a>
+		   </div>
 
-				  <!-- Right image column -->
-				  <div class="project-img-wrapper">
-				    <a href="projects.html">
-				      <img class="img-fluid project-img" src="assets/brain.png" alt="Machine Learning project preview">
-				    </a>
-				  </div>
+		 </div>
+	       </div>
+	      
 
-				</div> <!-- closes d-flex -->
-			      </div>   <!-- closes card-body -->
-			    </div>     <!-- closes card -->
+	       <!-- Project Card 3 -->
+	       <div class="card overflow-hidden shadow rounded-4 border-0 mb-5 project-card">
+		 <div class="card-body p-0 d-flex flex-row">
 
-            </section>
-            <!-- Call to action section-->
-            <section class="py-5 bg-gradient-primary-to-secondary text-white">
-                <div class="container px-5 my-5">
+		   <!-- Left text column -->
+		   <div class="p-4 d-flex flex-column flex-fill">
+		      <h2 style="font-size:1.9rem;">
+			 <a href="projects.html"
+			    style="color:#ffffff; text-decoration:none;">Arch Linux Install: Part 2</a>
+		      </h2>
+		      <br>
+		     <p>
+		     Let's finish up the critical steps to get your machine up and running!
+		     </p>
+
+		     <div class="tag-container">
+		       <span class="tag-pill">Linux</span>
+		       <span class="tag-pill">Shell</span>
+		       <span class="tag-pill">Neovim</span>
+		     </div>
+		   </div>
+
+		   <!-- Right image column -->
+		   <div class="project-img-wrapper">
+		     <a href="projects.html">
+		       <img class="img-fluid project-img"
+			    src="assets/projects_page1/arch_penguin2.png"
+			    alt="Arch Linux Install 2">
+		     </a>
+		   </div>
+
+		 </div>
+	       </div>
+
+	   <!-- Call to action section-->
+            <section class="py-3 bg-gradient-primary-to-secondary text-white">
+                <div class="container px-3 my-3">
                     <div class="text-center">
-                        <h2 class="display-4 fw-bolder mb-4">Let's build something together</h2>
-                        <a class="btn btn-outline-light btn-lg px-5 py-3 fs-6 fw-bolder" href="contact.html">Contact me</a>
-                    </div>
-                </div>
+                        <h2 class="display-6 fw-bolder mb-6">Let's build something together!</h2>
+		    </div> 
+		    <br>
+		    <div class="d-flex justify-content-center fs-2 gap-4 mb-4">
+		       <a class="text-gradient" href="https://linkedin.com/in/otcastro" target="_blank">
+			<i class="bi bi-linkedin"></i>
+		      </a>
+		      <a class="text-gradient" href="https://github.com/otcastro" target="_blank">
+			  <i class="bi bi-github"></i>
+		      </a>
+		  </div>
+ 
             </section>
         </main>
         <!-- Footer-->
@@ -165,10 +199,10 @@
                 <div class="row align-items-center justify-content-between flex-column flex-sm-row">
                     <div class="col-auto"><div class="small m-0">&copy; Leo Castro 2025</div></div>
                     <div class="col-auto">
-                        <a class="small" href="index.html">Home</a>
-                        <span class="mx-1">&middot;</span>
-                        <a class="small" href="contact.html">Contact</a>
-                    </div>
+		       <a class="small" href="index.html">Home</a>
+		       <span class="mx-1">&middot;</span>
+		       <a class="small" href="projects.html">Projects</a>
+		    </div>
                 </div>
             </div>
         </footer>
