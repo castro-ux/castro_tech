@@ -48,6 +48,28 @@
         .dots-4 {
             display: none !important;
         }
+	 
+      .projects-link {
+	  color: #7928be !important;
+	  text-decoration: none !important;
+	  font-size: 1.25rem;
+	  font-weight: 600;
+      }
+
+      .projects-link:hover {
+	  opacity: 0.8;
+      }
+	    
+      /*footer-links*/
+      .footer-link{
+	 color: white;
+	 text-decoration: none;
+	 font-size: 1.2rem;
+      }
+
+      .footer-link:hover{
+	 text-decoration: underline;
+      }
     </style>
 </head>
 
@@ -74,14 +96,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="projects.html">Projects</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
             </ul>
             </div>
         </div>
     </nav>
 
     <!-- HERO ONLY -->
-    <header class="py-5">
-        <div class="container px-5 pb-5">
+    <header class="py-4">
+        <div class="container px-5 pb-2">
 
             <!-- Profile Image -->
             <div class="row justify-content-center">
@@ -108,35 +133,34 @@
 		      <a class="text-gradient" href="https://github.com/otcastro" target="_blank">
 			  <i class="bi bi-github"></i>
 		      </a>
-		  </div>
-                    <!-- BIO -->
-                   
-<p class="lead fw-light mb-4 px-2"
-   style="font-size: 1.1rem; line-height: 1.7; max-width: 720px; margin: 0 auto;
-          color: #C9D3FA; font-weight: 600;">
-                        I’m Leo Castro, a data scientist, leveraging analytics and machine learning. I’m expanding my horizons into DevOps. I’ve worked as an Occupational Therapist for the past ten years, primarily in inpatient rehab, acute care, and seating and mobility. About two years ago, a work incident prompted me to reconsider my path as a clinician. I am now a graduate of Eastern University’s Data Science program as of November 2025.
-                    </p>
+		      <a class="text-gradient" href="contact.html" target="_blank">
+			 <i class="bi bi-person-lines-fill"></i>
+		      </a>
+		    </div>
+		    <br>
 
+		    <!-- BIO -->
+		  <p class="lead fw-light mb-0 px-2"style="font-size: 1.1rem; line-height: 1.7; max-width: 720px; margin: 0 auto; color: #C9D3FA; font-weight: 600; margin-bottom: 0;">
+		  I’m Leo Castro, a data scientist specializing in analytics and machine learning, now expanding into DevOps. I bring 10+ years of clinical experience as an Occupational Therapist in acute care, inpatient rehab, and seating and mobility. A pivotal work incident led me to transition into tech. I recently completed Eastern University’s Data Science program, graduating in November 2025.
+		  </p>
                 </div>
             </div>
-
         </div>
     </header>
-
 </main>
 
 <!-- FOOTER -->
-<footer class="bg-white py-4 mt-auto">
-    <div class="container px-5">
-        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-            <div class="col-auto">
-                <div class="small m-0">&copy; Leo Castro 2025</div>
-            </div>
-            <div class="col-auto">
-                <a class="small" href="projects.html">Projects</a>
-            </div>
-        </div>
-    </div>
+<footer class="py-2" style="background-color: transparent;">
+   <div class="container px-5 text-center">
+      <div class="mb-2">
+	 <a class="small footer-link" href="index.html">Home</a>
+	 <span class="mx-2">&middot;</span>
+	 <a class="small footer-link" href="projects.html">Projects</a>
+	 <span class="mx-2">&middot;</span>
+	 <a class="small footer-link" href="contact.html">Contact</a>
+      </div>
+      <div class="small text-white copyright">&copy; Castro 2025</div>
+   </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>

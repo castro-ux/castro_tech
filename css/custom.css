@@ -23,7 +23,6 @@ a:hover {
     opacity: 0.85;                      /* subtle fade on hover */
 }
 
-
 /* -----------------------------------------
    Article Meta (date, word count, reading time)
 ----------------------------------------- */
@@ -44,7 +43,7 @@ a:hover {
 
 /* spacing above footer so it doesn’t sit tight against page */
 footer {
-    margin-top: 40px;
+    margin-top: 10px; !important;
 }
 
 /* footer link color + remove underline + size */
@@ -90,5 +89,26 @@ footer a:hover {
     box-shadow: none;
     display: block;
     margin: 0 auto 1rem auto;
+}
+
+/* Reduce hero spacing */
+header.py-5 {
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
+}
+
+header .container {
+    padding-bottom: 1rem !important;
+}
+
+/* Reduce spacing under icons and bio */
+.hero-tighten {
+    margin-bottom: 0.6rem !important;
+}
+
+/* Footer tighter */
+footer {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
 }
 

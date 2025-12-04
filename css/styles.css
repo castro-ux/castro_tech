@@ -11814,4 +11814,7 @@ p code {
   font-family: "JetBrains Mono", monospace !important;
 }
 
-
+.copyright {
+    font-size: 0.5rem;
+    opacity: 0.5;
+}
