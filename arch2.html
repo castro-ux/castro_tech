@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Leo Castro Project 1 - Docker Example" />
+    <meta name="author" content="Leo Castro" />
+    <title>Arch Installation Part 2</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-49S4JFVG49"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-49S4JFVG49');
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Core Theme CSS (includes Bootstrap) -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/dark.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+
+    <!-- Syntax Highlighting Theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css"
+    />
+      <style>
+      /* Inline hyperlinks (purple, bold, no underline) */
+      p a {
+	text-decoration: none !important;
+	font-weight: 700;
+	color: #9b2dd1;
+      }
+      p a:hover {
+	text-decoration: none !important;
+	opacity: 0.85;
+      }
+      /* Highlight.js comment color (bash)*/
+      .hljs-comment,
+      .hljs-quote {
+	color: #53b7ff !important;
+      }
+      /* Paragraph spacing */
+      p {
+	line-height: 1.65;
+      }
+      /* Code block styling */
+      .code-box pre {
+	background-color: #1b263b;                  /* navy background */
+	color: #f8f9fa;                             /* light text */
+	border-left: 4px solid #9b2dd1;             /* purple accent */
+	padding: 0rem 1rem;                         /* vertical fixed by line-height */
+	border-radius: 10px;
+	font-size: 0.95rem;
+	line-height: 1.3;
+	overflow-x: auto;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.15);     /* soft depth */
+      }
+      .code-box code {
+	background-color: transparent;
+	color: inherit;                             /* keep syntax highlighting */
+	font-family: "Fira Code", monospace;
+      }
+      
+      /* Back to Projects button */
+      .btn-back {
+	background-color: transparent !important;   /* no fill */
+	color: #ffffff !important;                  /* white text */
+	border: 2px solid #ffffff !important;       /* white border */
+	border-radius: 10px !important;             /* rounded pill */
+	padding: 10px 24px;
+	font-weight: 600;
+	text-decoration: none !important;
+	display: inline-block;
+	transition: background-color 0.2s ease, opacity 0.2s ease;
+      }
+      .btn-back:hover {
+	background-color: #25315a !important;       /* subtle navy */
+	border-color: #25315a !important;
+	opacity: 0.95;
+	text-decoration: none !important;
+      }
+      </style>
+  
+  </head>
+  <body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white py-3">
+        <div class="container px-5">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bolder navbar-brand-name">Leo Castro</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+		<li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+
+          <!-- Page Content -->
+    <section class="py-5 project-article">
+       <div class="container px-5">
+       <h1 class="fw-bold text-center mb-4" style="color:#9b2dd1;">Arch Linux Installation: Part 2</h1>
+
+ <!-- Project Card -->
+      <div class="row gx-5 justify-content-center">
+	    <div class="col-lg-12 col-xl-10">
+	       <div class="article-content">
+
+      <!-- Article Meta. Everything below is now counted for word count -->
+      <div class="article-meta">
+	<div id="article-date">09 December 2025</div>
+	<div>
+	  <span id="article-word-count"></span>
+      &nbsp;·&nbsp;
+	   <span id="article-reading-time"></span>
+	</div>
+      </div>
+      <br>
+
+      <p>
+      Welcome back to the Arch Linux installation! We'll pick up right where we left off. Remember to visit the <a href="https://wiki.archlinux.org/title/Installation_guide" target="_blank" rel="noopener noreferrer">Arch Wiki</a> for the most comprehensive documentation and to help you setup your own personal configuration. This guide will walk you through setting up the locale, network, mkinitcpio, and the system configuration.     
+      <div class="card-body text-start">
+      <h4 class="fw-bold">Set Local Time</h4>
+      <p>
+      Begin by setting up the local time in your area. Accurate time settings are vital for logging, scheduling, and for date-time sensitive processes. By default, Arch Linux kernels have a feature to synchronize the system clock every 11 minutes. Synchronization is done using <code>systohc</code>. Once set, confirm your local time using the <code>date</code> command. 
+      </p>
+      </div>
+
+      <div class="code-box mb-4">
+     <pre><code class="language-bash">
+# Set local time 
+ln -sf /usr/share/zoneinfo/US/Eastern/New_York /etc/localtime
+hwclock --systohc
+     </code></pre>
+
+      <h4 class="fw-bold">Install Vim</h4>
+      <p>
+      An editor will be necessary for some of the remaining steps. We wil also install other essential packages, including man-db and man-pages for local reference. My laptop has an Intel chip, but if you have an AMD processor, use <code>amd-ucode</code>.  
+      </p>
+      <div class="code-box mb-4">
+     <pre><code class="language-bash">
+#Install essential packages
+pacman -Syu vim which sudo man-db man-pages texinfo intel-ucode lvm2 iwd openssh bash-completion
+     </code></pre>
+   </div>
+
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <h4 class="fw-bold">Network Configuration</h4>
+        <p>
+	Next, we’ll enable the system daemon <code>system-networkd</code> to manage network configurations and create virtual network devices as they appear. We will also install <code>systemd-resolved</code>, which centerally manages and centralizes network name resolutions (DNS, LLMNR, mDNS) requested by local applications. To configure your local administration network, create the file <code>/etc/systemd/network/25-wireless.network</code>. To edit this file using vim, enter <code>vim!!</code>. We will set <i>wlan0</i> as the wireless network interface. Dynamic Host Configuration Protocol (DHCP) will be used and it allows the system to automatically obtain an IP address, subnet mask, gateway, and DNS servers from the router. A three-second timer is set to ignore losses of carrier signal, which is useful for noisy environments and for maintaining stable connections. Lastly, enable the <code>iwd</code> service so your computer automatically connects to the wireless network upon boot. 
+        </p>
+    </div>
+</div>
+
+<div class="row mb-6 align-items-center">
+    
+        <div class="code-box mb-4">
+            <pre><code class="language-bash">
+# Enable the network service
+systemctl enable systemd-networkd.service
+systemctl enable systemd-resolved.service
+
+
+# Edit 25-wireless.network
+[Match]
+Name=wlan0
+
+[Network]
+DHCP=yes
+IgnoreCarrierLoss=3s
+
+# cat to confirm 
+cat /etc/systemd/network/25-wireless.network
+
+# Enable iwd
+systemctl enable iwd.service
+            </code></pre>
+        </div>
+    </div>
+
+
+    <div class="card-body text-start">
+       <h4 class="fw-bold">mkinitcpio</h4>
+       <p>
+       Next, lets focus on mkinitcpio, the utility that creates an intial ramdisk environment for booting the Linux kernel. The initial ramdisk is a small environment responsible for loading and configuring various kernel modules before <i>init</i> can begin. The first step in this process is configuring the keyboard layout to the desired locale. You can do this either by editing <code>/etc/locale.conf</code> in vim or by typing <code>echo “LANG=en_US_UTF-8” >> /etc/locale.conf"</code>. Then, enter <code>vim /etc/locale.gen</code> and uncomment <code>en_US.UTF-8 UTF-8</code>. To apply these changes, run <code>locale-gen</code> and then use <code>cat /etc/locale.conf</code> to confirm the settings. To configure the virtual console to the US keyboard layout, insert <code>echo "KEYMAP=us" >> /etc/vconsole.conf</code>
+       </p>
+       <p>
+       The <code>HOOKS</code> array within mkinitcpio contains essential packages that are included in the initramfs image and are run during its build process. Each hook performs a specific operation, ensuring the system boots in the proper sequence. Edit the file in vim as per below. 
+       </p>
+
+       <div class="code-box mb-4">
+	       <pre><code class="language-bash"> 
+# vim /etc/mkinitcpio.conf
+HOOKS=(base systemd autodetect microcode modconf kms keyboard sd-vconsole block sd-encrypt lvm2 filesystems fsck)
+	       </code></pre>
+      </div>
+      <p>
+      After editing the configuration file, run <code>mkinitcpio -P</code> to build and install the new initramfs image.  
+</p>
+    </div>
+
+
+    <h4 class="fw-bold">Bootloader Configuration</h4>
+      <p>
+      Now install the EFI firmware boot settings and bootloader using the <code>bootctl install</code>. Follow this immediately with <code>bootctl update</code> to ensure all installed versions of systemd-boot are correctly updated. Confirm succesful creation of entries by typing <code>ls /boot</code>. The EFI folder will now be visible there. I set a four-second timeout to select Arch Linux during startup, but you can make it faster :). The vmlinuz-linux and initramfs-linux are images and specify the LUKS encrypted root partition, its UUID, and the root filesystem. Obtain the UUID of the encrypted disk, sda2, by using <code>blkid</code> command, and then place that UUID into the <code>arch.conf</code> file between the equal signs. Replace <i>archie</i> with your volume group name. 
+      </p>
+      <div class="code-box mb-4">
+	       <pre><code class="language-bash"> 
+# vim boot/loader/loader.conf
+      timeout 4
+      default arch.conf
+      console-mode max
+      editor no
+
+# Obtain UUID from sda2
+blkid
+vim arch.conf
+:.!blkid 
+
+# vim boot/loader/entries/arch.conf
+title Arch Linux
+linux /vmlinuz-linux
+initrd /initramfs-linux.img
+
+options rd.luks.name=UUID=archie root=/dev/archie/root  rw
+	       </code></pre>
+      </div>
+
+
+    <div class="card-body text-start">
+       <h4 class="fw-bold">Add Username</h4>
+	    <p>
+	    We're almost there! Now it's time to add a new user, create a home directory, and grant sudo access. My chosen username will be <i>colonq</i>. To create a user and add them to the necessary group, type <code>useradd -m -G wheel colonq</code>, followed by <code>groups colonq</code> to confirm the group membership. Next, access the sudoers file by typing <code>visudo</code> and uncomment the line <code> wheel %wheel ALL=(ALL:ALL) ALL</code>. This grants members of the <code>wheel</code> group administrative privileges. Finish by setting up a password for the new user with the command <code>passwd colonq</code>
+	    </p>
+	 </div>
+
+
+<h4 class="fw-bold">Unmount and Reboot</h4>
+      <p>
+      Before unmounting the file systems, let's confirm the setup of the root and swap partitions. Use the <code>lsblk</code>command to view all block devices, and then <code>ls /dev/mapper</code> to verify your encrypted partitions are correctly listed. You should see the following mapped volumes: /boot, /mnt, /home, and [SWAP].   
+      </p>
+
+
+      <div class="row align-items-start mb-5">
+      <!-- LEFT SIDE -->
+      <div class="col-md-8">
+	 <h4 class="fw-bold">First Login</h4>
+	 <p>
+	 Your base Arch Linux installation is now complete! Now, safely exit the root shell by typing <code>exit</code>. Perform <code>umount -R /mnt and swapoff -a</code>. Execute <code>reboot</code> and remove the USB drive as the system restarts.You will then be greeted by the command-line interface (CLI) login screen. Login using the user credentials you created, and you are officially in!
+	 </p>
+
+      </div>
+
+      <!-- RIGHT SIDE (larger image) -->
+      <div class="col-md-4 text-md-end">
+	 <img src="assets/arch2/login_ttyl.png"
+	      alt="lsblk output"
+	      class="article-img-full img-fluid">
+      </div>
+	 <p>
+	  From here, the real customization begins. In my next article, we'll explore Hyprland vs Cosmic OS. Stay tuned!
+	 </p>
+   </div>
+
+</section>
+
+  </div> <!-- END article-content -->
+
+</div>
+
+            <!-- Back Button -->
+	 <div class="text-center">
+	     <a class="btn-back" href="projects.html">
+	     ← Back to Projects
+	   </a>
+	 </div>
+       </div>
+     </div>
+   </div>
+ </main>
+
+
+  <!-- FOOTER -->
+  <footer class="py-4 mt-auto" style="background-color: transparent;">
+     <div class="container px-5 text-center">
+	<div class="mb-2">
+	   <a class="small footer-link" href="index.html">Home</a>
+	   <span class="mx-2">&middot;</span>
+	   <a class="small footer-link" href="projects.html">Projects</a>
+	   <span class="mx-2">&middot;</span>
+	   <a class="small footer-link" href="contact.html">Contact</a>
+	</div>
+	<div class="small text-white copyright">&copy; Castro 2025</div>
+     </div>
+  </footer>
+
+    <!-- Scripts -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // 1. Get article text
+  const articleText = document.querySelector(".article-content").innerText;
+
+  // 2. Count words
+  const wordCount = articleText.trim().split(/\s+/).length;
+
+  // 3. Reading time (average 200 words/min)
+  const readingTime = Math.ceil(wordCount / 200);
+
+  // 4. Insert values into the page
+  document.getElementById("article-reading-time").textContent =
+    `${readingTime} min read`;
+
+  document.getElementById("article-word-count").textContent =
+    `${wordCount} words`;
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
