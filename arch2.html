@@ -274,7 +274,7 @@ options rd.luks.name=UUID=archie root=/dev/archie/root  rw
 
 <h4 class="fw-bold">Unmount and Reboot</h4>
       <p>
-      Before unmounting the file systems, let's confirm the setup of the root and swap partitions. Use the <code>lsblk</code>command to view all block devices, and then <code>ls /dev/mapper</code> to verify your encrypted partitions are correctly listed. You should see the following mapped volumes: /boot, /mnt, /home, and [SWAP].   
+      Before unmounting the file systems, let's confirm the setup of the root and swap partitions. Use the <code>lsblk</code>command to view all block devices, and then <code>ls /dev/mapper</code> to verify your encrypted partitions are correctly listed. You should see the following mapped volumes: /boot, /mnt, /home, [SWAP].   
       </p>
 
 
@@ -283,7 +283,7 @@ options rd.luks.name=UUID=archie root=/dev/archie/root  rw
       <div class="col-md-8">
 	 <h4 class="fw-bold">First Login</h4>
 	 <p>
-	 Your base Arch Linux installation is now complete! Now, safely exit the root shell by typing <code>exit</code>. Perform <code>umount -R /mnt and swapoff -a</code>. Execute <code>reboot</code> and remove the USB drive as the system restarts.You will then be greeted by the command-line interface (CLI) login screen. Login using the user credentials you created, and you are officially in!
+	 Your base Arch Linux installation is now complete! Now, safely exit the root shell by typing <code>exit</code>. Perform <code>umount -R /mnt</code> and <code>swapoff -a</code>. Execute <code>reboot</code> and remove the USB drive as the system restarts.You will then be greeted by the command-line interface (CLI) login screen. Login using the user credentials you created, and you are officially in!
 	 </p>
 
       </div>
