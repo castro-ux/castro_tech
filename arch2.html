@@ -184,7 +184,7 @@ pacman -Syu vim which sudo man-db man-pages texinfo intel-ucode lvm2 iwd openssh
     <div class="col-md-12">
         <h4 class="fw-bold">Network Configuration</h4>
         <p>
-	Next, we’ll enable the system daemon <code>system-networkd</code> to manage network configurations and create virtual network devices as they appear. We will also install <code>systemd-resolved</code>, which centerally manages and centralizes network name resolutions (DNS, LLMNR, mDNS) requested by local applications. To configure your local administration network, create the file <code>/etc/systemd/network/25-wireless.network</code>. To edit this file using vim, enter <code>vim!!</code>. We will set <i>wlan0</i> as the wireless network interface. Dynamic Host Configuration Protocol (DHCP) will be used and it allows the system to automatically obtain an IP address, subnet mask, gateway, and DNS servers from the router. A three-second timer is set to ignore losses of carrier signal, which is useful for noisy environments and for maintaining stable connections. Lastly, enable the <code>iwd</code> service so your computer automatically connects to the wireless network upon boot. 
+	Next, we’ll enable the system daemon <code>system-networkd</code> to manage network configurations and create virtual network devices as they appear. We will also install <code>systemd-resolved</code>, which centerally manages and centralizes network name resolutions (DNS, LLMNR, mDNS) requested by local applications. To configure your local administration network, create the file <code>/etc/systemd/network/25-wireless.network</code>. To edit this file using vim, enter <code>vim !!</code>. We will set <i>wlan0</i> as the wireless network interface. Dynamic Host Configuration Protocol (DHCP) will be used and it allows the system to automatically obtain an IP address, subnet mask, gateway, and DNS servers from the router. A three-second timer is set to ignore losses of carrier signal, which is useful for noisy environments and for maintaining stable connections. Lastly, enable the <code>iwd</code> service so your computer automatically connects to the wireless network upon boot. 
         </p>
     </div>
 </div>
@@ -219,10 +219,10 @@ systemctl enable iwd.service
     <div class="card-body text-start">
        <h4 class="fw-bold">mkinitcpio</h4>
        <p>
-       Next, lets focus on mkinitcpio, the utility that creates an intial ramdisk environment for booting the Linux kernel. The initial ramdisk is a small environment responsible for loading and configuring various kernel modules before <i>init</i> can begin. The first step in this process is configuring the keyboard layout to the desired locale. You can do this either by editing <code>/etc/locale.conf</code> in vim or by typing <code>echo “LANG=en_US_UTF-8” >> /etc/locale.conf"</code>. Then, enter <code>vim /etc/locale.gen</code> and uncomment <code>en_US.UTF-8 UTF-8</code>. To apply these changes, run <code>locale-gen</code> and then use <code>cat /etc/locale.conf</code> to confirm the settings. To configure the virtual console to the US keyboard layout, insert <code>echo "KEYMAP=us" >> /etc/vconsole.conf</code>
+       Next, lets focus on mkinitcpio, the utility that creates an intial ramdisk environment for booting the Linux kernel. The initial ramdisk is a small environment responsible for loading and configuring various kernel modules before <i>init</i> can begin. The first step in this process is configuring the keyboard layout to the desired locale. You can do this either by editing <code>/etc/locale.conf</code> in vim or by typing <code>echo “LANG=en_US_UTF-8” >> /etc/locale.conf"</code>. Then, enter <code>vim /etc/locale.gen</code> and uncomment <code>en_US.UTF-8 UTF-8</code>. To apply these changes, run <code>locale-gen</code> and then use <code>cat /etc/locale.conf</code> to confirm the settings. To configure the virtual console to the US keyboard layout, insert <code>echo "KEYMAP=us" >> /etc/vconsole.conf</code>. Lastly, add a hostname via <code> echo "archie" >> /etc/hostname</code>.
        </p>
        <p>
-       The <code>HOOKS</code> array within mkinitcpio contains essential packages that are included in the initramfs image and are run during its build process. Each hook performs a specific operation, ensuring the system boots in the proper sequence. Edit the file in vim as per below. 
+       The <code>HOOKS</code> array within mkinitcpio contains essential packages that are included in the initramfs image and are run during its build process. Each hook performs a specific operation, ensuring the system boots in the proper sequence. Edit the file in vim as per below. The line is above the <i>COMPRESSION</i> section. 
        </p>
 
        <div class="code-box mb-4">
@@ -232,7 +232,7 @@ HOOKS=(base systemd autodetect microcode modconf kms keyboard sd-vconsole block 
 	       </code></pre>
       </div>
       <p>
-      After editing the configuration file, run <code>mkinitcpio -P</code> to build and install the new initramfs image.  
+      After editing the configuration file, run <code>mkinitcpio -P</code> to build and install the new initramfs image. You will receive a message, "Initcpio image generation successful". 
 </p>
     </div>
 
@@ -272,10 +272,23 @@ options rd.luks.name=UUID=archie root=/dev/archie/root  rw
 	 </div>
 
 
-<h4 class="fw-bold">Unmount and Reboot</h4>
+	 <div class="row align-items-start mb-6">
+	 <!-- LEFT SIDE -->
+	 <div class="col-md-6">
+	    <h4 class="fw-bold">Unmount and Reboot</h4>
       <p>
-      Before unmounting the file systems, let's confirm the setup of the root and swap partitions. Use the <code>lsblk</code>command to view all block devices, and then <code>ls /dev/mapper</code> to verify your encrypted partitions are correctly listed. You should see the following mapped volumes: /boot, /mnt, /home, [SWAP].   
+      Before unmounting the file systems, let's confirm the setup of the root and swap partitions. Use the <code>lsblk</code>command to view all block devices, and then <code>ls /dev/mapper</code> to verify your encrypted partitions are correctly listed. You should see the following. 
       </p>
+	 </div>
+
+      <!-- RIGHT SIDE (larger image) -->
+      <div class="col-md-6 text-md-end">
+	 <img src="assets/arch2/mapper.png"
+	      alt="lsblk output"
+	      class="article-img-full img-fluid">
+      </div>
+	 </div>
+	 
 
 
       <div class="row align-items-start mb-5">
