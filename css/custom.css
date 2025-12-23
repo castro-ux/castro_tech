@@ -64,8 +64,31 @@ footer a:hover {
     padding-bottom: 60px;  /* Adds spacing above footer */
 }
 
+
+/* Back to Projects button */
 .btn-back {
-    margin-bottom: 60px; /* Increase space above the footer */
+    background-color: transparent !important;   /* no fill */
+    color: #ffffff !important;                  /* white text */
+    border: 2px solid #ffffff !important;       /* white border */
+    border-radius: 10px !important;             /* rounded pill */
+    padding: 10px 24px;
+    font-weight: 600;
+    text-decoration: none !important;
+    display: inline-block;
+    transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-back:hover {
+    background-color: #25315a !important;       /* subtle navy */
+    border-color: #25315a !important;
+    opacity: 0.95;
+    text-decoration: none !important;
+}
+
+/* Disabled page button style */
+.btn-back[style*="pointer-events: none"] {
+    opacity: 0.6;
+    cursor: not-allowed;
 }
 
 /* Prevent article images from floating next to code blocks */
@@ -108,7 +131,7 @@ header .container {
 
 /* Footer tighter */
 footer {
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
 }
 

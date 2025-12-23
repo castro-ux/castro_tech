@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="Leo Castro Project 1 - Docker Example" />
+    <meta name="description" content="Leo Castro Arch Installation Part 1" />
     <meta name="author" content="Leo Castro" />
     <title>Arch Installation Part 1</title>
 
@@ -77,25 +77,6 @@
 	background-color: transparent;
 	color: inherit;                             /* keep syntax highlighting */
 	font-family: "Fira Code", monospace;
-      }
-      
-      /* Back to Projects button */
-      .btn-back {
-	background-color: transparent !important;   /* no fill */
-	color: #ffffff !important;                  /* white text */
-	border: 2px solid #ffffff !important;       /* white border */
-	border-radius: 10px !important;             /* rounded pill */
-	padding: 10px 24px;
-	font-weight: 600;
-	text-decoration: none !important;
-	display: inline-block;
-	transition: background-color 0.2s ease, opacity 0.2s ease;
-      }
-      .btn-back:hover {
-	background-color: #25315a !important;       /* subtle navy */
-	border-color: #25315a !important;
-	opacity: 0.95;
-	text-decoration: none !important;
       }
       </style>
   
@@ -190,7 +171,7 @@ sudo dd if=arch-linux.iso of=/dev/sdb status=progress
 
 	<!-- Image on the right -->
 	<div class="col-md-5 text-md-end">
-	   <img src="assets/arch1/boot_install.png"
+	   <img src="assets/02_arch1/boot_install.png"
 	      alt="Arch Linux boot screen"
 	      class="article-img-full">
 	</div>
@@ -247,7 +228,7 @@ timedatectl
 
 	 <!-- RIGHT SIDE (larger image) -->
 	 <div class="col-md-7 text-md-end">
-	    <img src="assets/arch1/cryptlvm.png"
+	    <img src="assets/02_arch1/cryptlvm.png"
 		 alt="lsblk output"
 		 class="article-img-full img-fluid">
 	 </div>
@@ -309,8 +290,8 @@ mkfs.fat -F32 /dev/sda1
 
 	 <!-- RIGHT SIDE (larger image) -->
 	 <div class="col-md-7 text-md-end">
-	    <img src="assets/arch1/mount.png"
-		 alt="lsblk output"
+	    <img src="assets/02_arch1/mount.png"
+		 alt="partition mounting order"
 		 class="article-img-full img-fluid">
 	 </div>
       </div>
@@ -336,8 +317,8 @@ lsblk
 
 	 <!-- RIGHT SIDE (larger image) -->
 	 <div class="col-md-7 text-md-end">
-	    <img src="assets/arch1/chroot_mount.png"
-		 alt="lsblk output"
+	    <img src="assets/02_arch1/chroot_mount.png"
+		 alt="final mounting order"
 		 class="article-img-full img-fluid">
 	 </div>
       </div>

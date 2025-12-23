@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="COSMIC vs Hyprland" />
+    <meta name="author" content="Leo Castro" />
+    <title>COSMIC vs Hyprland</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-49S4JFVG49"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-49S4JFVG49');
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Core Theme CSS (includes Bootstrap) -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/dark.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+
+    <!-- Syntax Highlighting Theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css"
+    />
+      <style>
+      /* Inline hyperlinks (purple, bold, no underline) */
+      p a {
+	text-decoration: none !important;
+	font-weight: 700;
+	color: #9b2dd1;
+      }
+      p a:hover {
+	text-decoration: none !important;
+	opacity: 0.85;
+      }
+      /* Highlight.js comment color (bash)*/
+      .hljs-comment,
+      .hljs-quote {
+	color: #53b7ff !important;
+      }
+      /* Paragraph spacing */
+      p {
+	line-height: 1.65;
+      }
+      /* Code block styling */
+      .code-box pre {
+	background-color: #1b263b;                  /* navy background */
+	color: #f8f9fa;                             /* light text */
+	border-left: 4px solid #9b2dd1;             /* purple accent */
+	padding: 0rem 1rem;                         /* vertical fixed by line-height */
+	border-radius: 10px;
+	font-size: 0.95rem;
+	line-height: 1.3;
+	overflow-x: auto;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.15);     /* soft depth */
+      }
+      .code-box code {
+	background-color: transparent;
+	color: inherit;                             /* keep syntax highlighting */
+	font-family: "Fira Code", monospace;
+      }
+      </style>
+  
+  </head>
+  <body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white py-3">
+        <div class="container px-5">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bolder navbar-brand-name">Leo Castro</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+		<li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+	    </ul>
+	    </div>
+        </div>
+    </nav>
+
+          <!-- Page Content -->
+    <section class="py-5 project-article">
+       <div class="container px-5">
+       <h1 class="fw-bold text-center mb-4" style="color:#9b2dd1;">COSMIC vs Hyprland</h1>
+
+ <!-- Project Card -->
+      <div class="row gx-5 justify-content-center">
+	    <div class="col-lg-12 col-xl-10">
+	       <div class="article-content">
+
+      <!-- Article Meta. Everything below is now counted for word count -->
+      <div class="article-meta">
+	<div id="article-date">23 December 2025</div>
+	<div>
+	  <span id="article-word-count"></span>
+      &nbsp;·&nbsp;
+	   <span id="article-reading-time"></span>
+	</div>
+      </div>
+      <br>
+
+      <p>
+	 Now that we have wrapped up the Arch Linux installation series, it's time to choose a window manager. While we could simply install a traditional Desktop Environment (DE) like KDE or GNOME, we have came too far for that! Instead, let's look at two modern Wayland-based options: COSMIC and Hyprland. 
+      </p>
+      <p>
+      COSMIC is fairly simple to install, so I'll cover the essentials here. Refer to the <a href="https://wiki.archlinux.org/title/COSMIC" target="_blank" rel="noopener noreferrer">COSMIC Wiki</a> for further details. Hyprland, in contrast, requires significantly more configuration, making the <a href="https://wiki.hypr.land" target="_blank" rel="noopener noreferrer">Hyprland Wiki</a> an essential reference. You can access my personal <a href="https://github.com/castro-ux/.dotfiles" target="_blank" rel="noopener noreferrer">dotfiles</a> on Github if you would like to follow along or adapt them for your own setup.
+      </p>
+
+      <div class="card-body text-start">
+      <h4 class="fw-bold">COSMIC</h4>
+      <p>
+      COSMIC is a desktop environment built by System76 and written in Rust. In September 2025, the 24.04 Beta was released. It features a custom theming system, uses the Rust-based Iced graphics toolkit, and delivers a snappy, tiling-focused environment with several preloaded applications. 
+      </p>
+      <p>
+      For my setup, I went with a bare-bones environment. If you prefer the full COSMIC experience (text editor,file manager, cosmic-terminal, a multimedia player, wallpapers, etc.), install using <code>sudo pacman -S cosmic</code>. Instead, I opted for a minimal configuration and used Alacritty as my terminal. 
+      </p>
+      </div>
+
+      <div class="code-box mb-4">
+     <pre><code class="language-bash">
+sudo pacman -S cosmic-session cosmic-comp cosmic-panel cosmic-applets cosmic-app-library cosmic-bg cosmic-randr xdg-desktop-portal-cosmic alacritty
+     </code></pre>
+      </div>
+
+      <br>
+      <h4 class="fw-bold">COSMIC Initialization</h4>
+      <p>
+      Launching COSMIC from the TTY is straightforward via <code>start-cosmic</code>. I chose to stick with the TTY for simplicity, but if you prefer a graphical login screen, your can download and enable the <code>cosmic-greeter</code>.
+      </p>
+   <br>
+
+   <div class="row align-items-start mb-4">
+      <!-- LEFT SIDE -->
+      <div class="col-md-7">
+        <h4 class="fw-bold">Exploring COSMIC</h4>
+        <p>
+	 Right away, you will notice how smooth and responsive COSMIC is. The tiling experience is fluid, and customization is straightforward — wallpapers, themes, menu bar, icons, etc. However, I found myself using the touchpad more than I prefer. This was actually my second attempt at trying COSMIC. While it's polished and thoughtfully designed, I am just too accustomed to Hyprland. Still COSMIC is absolutely worth trying! If you want a refined, out-of-the-box tiling experience, COSMIC is a strong contender. The <a href="https://github.com/catppuccin/cosmic-desktop?tab=readme-ov-file" target="_blank" rel="noopener noreferrer">catppuccin</a> theme, in particular, is definitely eye candy!! Meow! 
+	</p>
+	<p>
+	It's also worth noting that COSMIC and Hyprland can coexist on your Arch system. You can launch either DE from the TTY, and each session runs independently without affecting the other.
+	</p>
+    </div>
+      <!-- RIGHT SIDE (larger image) -->
+      <div class="col-md-4 text-md-end">
+	 <img src="assets/04_cosmic_hyprland/cosmic_mocha.png"
+	      alt="cosmic catpuccin theme"
+	      class="article-img-full img-fluid">
+      </div>
+   </div>
+
+
+    <h4 class="fw-bold">Uninstalling COSMIC</h4>
+      <p>
+      If you're ready to move on to Hyprland, uninstalling COSMIC is straightforward. Don't worry, the Arch Linux installation remains untouched. To avoid dependency errors, certain blocking packages must be removed first. Otherwise, you will encounter dependency resolution failures, such as <i>error: failed to prepare transaction (could not satisfy dependencies)</i>. Afterward, you can remove the remaining packages and clear the configuration directories for a clean slate. 
+      </p>
+
+      <div class="code-box mb-4">
+	       <pre><code class="language-bash"> 
+# Remove the blocking packages
+sudo pacman -Rns cosmic-screenshot cosmic-session xdg-desktop-portal-cosmic
+
+# Remove remaining packages and clean configs
+sudo pacman -Rns cosmic-comp cosmic-panel cosmic-applets cosmic-app-library cosmic-bg cosmic-randr
+rm -rf ~/.config/com.system76*
+rm -rf ~/.local/share/com.system76*
+	       </code></pre>
+      </div>
+
+
+    <div class="card-body text-start">
+       <h4 class="fw-bold">Hyprland</h4>
+       <p>
+       Installing Hyprland is more tedious than COSMIC, but the trade-off is complete customization and granula control. There is a learning curve, but it's well worth the effort. One key lesson from this project was the importance of having a mono nerd font installed <i>before</i> launching Hyprland. Without it, the terminal and keybindings will not function, leaving only <code>SUPER + M</code> working. Save yourself the major headache by installing  a font first, for example: <code>sudo pacman -S ttf-jetbrains-mono-nerd</code>.
+       </p>
+       <p>
+       Next, install Hyprland using <code>sudo pacman -S hyprland</code>. Then launch it from the TTY using <code>hyprland</code>. If you see the Hyprland logo or the anime wallpaper, you have succceeded! A warning splash appears at the top on first launch. Using the default keybind to open the terminal, <code> SUPER + Q</code>, navigate to <code>~/.config/hypr/hyprland.conf</code> and delete the line <code>autogenerated=1</code>. The config reloads instantly on save and the warning splash disappears immediately.
+       </p>
+       <p>
+       The SUPER key refers to the 'Windows' key. If you are unable to open the terminal, it's likely that the default terminal emulator wasn't installed. In that case, press <code> SUPER + M</code> to return to the TTY, and verify your terminal settings and keybinds in <code>~/.config/hypr/hyprland.conf</code>. Verify that your desired terminal emulator is set correctly, whether Alacritty or Kitty.  
+       </p>
+    </div>
+    
+       <div class="code-box mb-4">
+	  <pre><code class="language-bash"> 
+# Set programs that you use
+$terminal = alacritty
+$fileManager = dolphin
+$menu = dmenu_run -l 5 
+$browser = qutebrowser
+	  </code></pre>
+       </div>
+
+      <div class="card-body text-start">
+	    <h4 class="fw-bold">dmenu</h4>
+	    <p>
+	    Every window manager needs an application launcher. While Rofi is a popular choice, I'm going to experiment with dmenu for its minimalism. Created by the <a href="https://www.suckless.org" target="_blank" rel="noopener noreferrer">suckless.org</a> project, it can be installed with <code>sudo pacman -S dmenu</code>. In the "My Programs" section of <a href="https://github.com/castro-ux/.dotfiles/blob/master/hypr/.config/hyprland.conf" target="_blank" rel="noopener noreferrer">hyprland.conf</a>, dmenu displays a vertical list of five entries, using <code>dmenu_run -l 5</code>. To swith to a horizontal layout, remove the <code>-l</code> option. I will cover dmenu scripting in a future post.
+	    </p>
+
+	 <!--Image below text-->
+	 <div class="my-4">
+	    <img src="assets/04_cosmic_hyprland/dmenu.png"
+		 alt="dmenu running with five lines" 
+		 class="img-fluid w-100 rounded"> 
+	 </div>
+      </div>
+
+      <div class="row align-items-start mb-4">
+	 <!--LEFT SIDE -->
+	 <div class="col-md-7">
+	    <h4 class="fw-bold">Monitor & Keybindings</h4>
+	    <p>
+	    Before customizing keybinds, it's important to confirm that your monitor is configured correctly. I adjusted my monitor resolution and scaling to <code>monitor=,1920x1080@60,0x0, 1.0</code>, but your setup may require some experimentation. Scaling changes can affect font rendering, so even though we installed the JetBrains Mono Nerd font earlier, additional adjustments may be neccessary. Here is <a href="https://github.com/castro-ux/.dotfiles/tree/master/alacritty/.config/alacritty.toml" target="_blank" rel="noopener noreferrer">my Alacritty configuratione</a> for reference, located at <code>config/alacritty/alacritty.toml</code></a>. Exit the terminal and reopen to apply the changes.  
+	    </p>
+	    <p>
+	    Keybindings should be tailored to your workflow. I also configure several utilities and applications to launch automatically at startup. You can even select which workspace to open in. I prefer:
+	    <ol>
+	       <li>SUPER + Enter for the terminal</li>
+	       <li>SUPER + B for the the browser</li>
+	       <li>Vim keys for navigation: h, j, k, l</li>
+	    </ol>
+	    <p>
+	  </div>
+
+	 <div class="col-md-5 text-md-end">
+	    <img src="assets/04_cosmic_hyprland/programs_auto.png"
+		 alt="monitor, programs, and autostart configuration"
+		 class="article-img-full img-fluid">
+	 </div>
+
+	 <div class="card-body text-start">
+	    <h4 class="fw-bold">Transparency and Borders</h4>
+	    <p>
+	    A small amount of transparency can add a surprising amount of visual polish. Even a subtle border provides just enough contrast to clearly seperate windows, via <code>border_size= 1</code>.
+	    </p>
+	 </div> 
+
+	 <div class="code-box mb-4">
+	 <pre><code class="language-bash">
+# LOOK AND FEEL -- decoration 
+active_opacity = 1.0
+inactive_opacity = 0.8
+	 </code></pre>
+	 </div>
+    </div>
+
+      <div class="card-body text-start">
+	    <h4 class="fw-bold">hypridle</h4>
+	    <p>
+	    Hyprland has the Hypr Ecosystem, which are native utilities to simplify configuration. First, we'll manage the idle daemon, hypridle. This utility manages idle behavior by defining listeners that trigger actions after a set of period of inactivity. For instance, you can create a listener to auto-lock after a 5 minute delay. Install hypridle with <code>sudo pacman -Syu hypridle</code>. Create your config at <code>~/.config/hypr.hypridle.conf</code>. The <a href="https://wiki.hypr.land/Hypr-Ecosystem/hypridle/" target="_blank" rel="noopener noreferrer">hypridle wiki</a> provides a list of general variables and listeners for desired behaviors. To run hypridle at startup, edit <code>hyprland.conf</code> and add the command, <code>exec-once = hypridle</code>.
+      </p>
+	 </div>
+
+	 <div class="code-box mb-4">
+	       <pre><code class="language-bash"> 
+# hypridle.conf
+listener {
+   timeout = 300
+   on-timeout = hyprlock
+	       </code></pre>
+      </div>
+
+      <div class="row align-items-start mb-4">
+	 <!-- LEFT SIDE -->
+	 <div class="col-md-8">
+	    <h4 class="fw-bold">hyprlock</h4>
+	    <p>
+	    Next, we configure the screen locking utility, hyprlock. It integrates seamlessly with hypridle and allows for visual customization. Install it by performing <code>sudo pacman -Syu hyprlock</code>. Click <a href="https://github.com/hyprwm/hyprlock/blob/main/assets/example.conf" target="_blank" rel="noopener noreferrer">here</a> for a sample hyprlock.conf. You can experiment with changes in real time by triggering the lock keybind, <code> CTRL + SHIFT + L</code>. This custom keybind must be defined in hyprland.conf and must be launched at startup, <code>bind = $CTRL_SHIFT, l, exec, hyprlock</code>. Be aware that <code>hide_cursor= true</code> will result in a completely black screen. The lock is still active, but no visual feedback is shown when typing your password. 
+      </p>
+	 </div>
+
+	 <!-- RIGHT SIDE (larger image) -->
+	 <div class="col-md-4 text-md-end">
+	    <img src="assets/04_cosmic_hyprland/screen_lock.png"
+		 alt="hyprlock screen"
+		 class="article-img-full img-fluid">
+	 </div>
+
+	    <div class="card-body text-start">
+	    <h4 class="fw-bold">hyprpaper</h4>
+	    <p>
+	    Wallpaper management is handled by hyprpaper. Install the utility by performing <code>sudo pacman -S hyprpaper</code>. A hyprpaper configuration includes preload and wallpaper entries. Preloading loads the images to the RAM. To configure wallpapers correctly, you will need to find the name of your monitor, via <code>hyprctl monitors</code>. For example, my monitor's name is edP-1. An optional splash screen can also be displayed at the bottom of the wallpaper.  
+      </p>
+	 </div>
+
+	       <div class="code-box mb-4">
+		  <pre><code class="language-bash"> 
+# hyprctl monitors
+hyprctlMonitor eDP-1(ID 0):
+
+preload= ~/pictures/wallpapers/dark_sun.jpeg
+wallpaper= eDP-1, ~/pictures/wallpapers/flame.jpg
+splash= true
+		  </code></pre>
+	       </div>
+
+	 
+      <div class="card-body text-start">
+	    <h4 class="fw-bold">hyprshot</h4>
+	    <p>
+	    Finally, hyprshot provides screenshot functionality. Install hyprshot using <code> yay -S hyprshot</code>. No configuration file is required, only keybinds. I have setup my bindings for three modes only, but refer to <code>hyprshot -h</code> for a full overview. 
+      </p>
+	 </div>
+
+	 <div class="code-box mb-4">
+	       <pre><code class="language-bash"> 
+#hyprshot
+bind = $mainMod, PRINT, exec, hyprshot -m window     #screnshot a window
+bind = $CTRL_SHIFT, PRINT, exec, hyprshot -m output  #screenshot a monitor
+bind = , PRINT, exec, hyprshot -m region             #screnshot a region 
+	       </code></pre>
+	 </div>
+
+	 <br>
+	 <p>
+	 We have covered the fundamentals of minimal "ricing" on Linux. There are endless guides, dotfiles, and inspirations available, but understanding the fundamentals puts you in control of your system. You become your own administrator. If you are seeking a faster starting point or some inspiration, <a href="https://wiki.hypr.land/Getting-Started/Preconfigured-setups" target="_blank" rel="noopener noreferrer">preconfigured setups</a> are available, such as Omarchy, Hyde, end_4, JaKooLit, and ML4W. 
+	 </p>
+	 <p>
+	 Your configuration will evolve as your workflow does, but you’re firmly in control. You know what is running, why it is running, and how to fix it when it breaks. And of course, you can now say...I use Arch btw! 
+	 </p>
+	 </div>
+  </div> <!-- END article-content -->
+
+
+            <!-- Back Button -->
+	 <div class="text-center">
+	     <a class="btn-back" href="projects.html">
+	     ← Back to Projects
+	   </a>
+	 </div>
+       </div>
+     </div>
+   </div>
+ </main>
+
+
+  <!-- FOOTER -->
+  <footer class="py-4 mt-auto" style="background-color: transparent;">
+     <div class="container px-5 text-center">
+	<div class="mb-2">
+	   <a class="small footer-link" href="index.html">Home</a>
+	   <span class="mx-2">&middot;</span>
+	   <a class="small footer-link" href="projects.html">Projects</a>
+	   <span class="mx-2">&middot;</span>
+	   <a class="small footer-link" href="contact.html">Contact</a>
+	</div>
+	<div class="small text-white copyright">&copy; Castro 2025</div>
+     </div>
+  </footer>
+
+    <!-- Scripts -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // 1. Get article text
+  const articleText = document.querySelector(".article-content").innerText;
+
+  // 2. Count words
+  const wordCount = articleText.trim().split(/\s+/).length;
+
+  // 3. Reading time (average 200 words/min)
+  const readingTime = Math.ceil(wordCount / 200);
+
+  // 4. Insert values into the page
+  document.getElementById("article-reading-time").textContent =
+    `${readingTime} min read`;
+
+  document.getElementById("article-word-count").textContent =
+    `${wordCount} words`;
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
+
+
+

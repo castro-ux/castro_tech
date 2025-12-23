@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <meta name="description" content="Leo Castro Project 1 - Docker Example" />
+    <meta name="description" content="Leo Castro Arch Installation Part 2"/>
     <meta name="author" content="Leo Castro" />
     <title>Arch Installation Part 2</title>
 
@@ -77,25 +77,6 @@
 	background-color: transparent;
 	color: inherit;                             /* keep syntax highlighting */
 	font-family: "Fira Code", monospace;
-      }
-      
-      /* Back to Projects button */
-      .btn-back {
-	background-color: transparent !important;   /* no fill */
-	color: #ffffff !important;                  /* white text */
-	border: 2px solid #ffffff !important;       /* white border */
-	border-radius: 10px !important;             /* rounded pill */
-	padding: 10px 24px;
-	font-weight: 600;
-	text-decoration: none !important;
-	display: inline-block;
-	transition: background-color 0.2s ease, opacity 0.2s ease;
-      }
-      .btn-back:hover {
-	background-color: #25315a !important;       /* subtle navy */
-	border-color: #25315a !important;
-	opacity: 0.95;
-	text-decoration: none !important;
       }
       </style>
   
@@ -219,7 +200,7 @@ systemctl enable iwd.service
     <div class="card-body text-start">
        <h4 class="fw-bold">mkinitcpio</h4>
        <p>
-       Next, lets focus on mkinitcpio, the utility that creates an intial ramdisk environment for booting the Linux kernel. The initial ramdisk is a small environment responsible for loading and configuring various kernel modules before <i>init</i> can begin. The first step in this process is configuring the keyboard layout to the desired locale. You can do this either by editing <code>/etc/locale.conf</code> in vim or by typing <code>echo “LANG=en_US_UTF-8” >> /etc/locale.conf"</code>. Then, enter <code>vim /etc/locale.gen</code> and uncomment <code>en_US.UTF-8 UTF-8</code>. To apply these changes, run <code>locale-gen</code> and then use <code>cat /etc/locale.conf</code> to confirm the settings. To configure the virtual console to the US keyboard layout, insert <code>echo "KEYMAP=us" >> /etc/vconsole.conf</code>. Lastly, add a hostname via <code> echo "archie" >> /etc/hostname</code>.
+       Next, lets focus on mkinitcpio, the utility that creates an intial ramdisk environment for booting the Linux kernel. The initial ramdisk is a small environment responsible for loading and configuring various kernel modules before <i>init</i> can begin. The first step in this process is configuring the keyboard layout to the desired locale. You can do this either by editing <code>/etc/locale.conf</code> in vim or by typing <code>echo “LANG=en_US.UTF-8” >> /etc/locale.conf"</code>. Then, enter <code>vim /etc/locale.gen</code> and uncomment <code>en_US.UTF-8 UTF-8</code>. To apply these changes, run <code>locale-gen</code> and then use <code>cat /etc/locale.conf</code> to confirm the settings. To configure the virtual console to the US keyboard layout, insert <code>echo "KEYMAP=us" >> /etc/vconsole.conf</code>. Lastly, add a hostname via <code> echo "archie" >> /etc/hostname</code>.
        </p>
        <p>
        The <code>HOOKS</code> array within mkinitcpio contains essential packages that are included in the initramfs image and are run during its build process. Each hook performs a specific operation, ensuring the system boots in the proper sequence. Edit the file in vim as per below. The line is above the <i>COMPRESSION</i> section. 
@@ -283,8 +264,8 @@ options rd.luks.name=UUID=archie root=/dev/archie/root  rw
 
       <!-- RIGHT SIDE (larger image) -->
       <div class="col-md-6 text-md-end">
-	 <img src="assets/arch2/mapper.png"
-	      alt="lsblk output"
+	 <img src="assets/03_arch2/mapper.png"
+	      alt="dev mapper"
 	      class="article-img-full img-fluid">
       </div>
 	 </div>
@@ -296,15 +277,15 @@ options rd.luks.name=UUID=archie root=/dev/archie/root  rw
       <div class="col-md-8">
 	 <h4 class="fw-bold">First Login</h4>
 	 <p>
-	 Your base Arch Linux installation is now complete! Now, safely exit the root shell by typing <code>exit</code>. Perform <code>umount -R /mnt</code> and <code>swapoff -a</code>. Execute <code>reboot</code> and remove the USB drive as the system restarts.You will then be greeted by the command-line interface (CLI) login screen. Login using the user credentials you created, and you are officially in!
+	 Your base Arch Linux installation is now complete! Now, safely exit the root shell by typing <code>exit</code>. Perform <code>umount -R /mnt</code> and <code>swapoff -a</code>. Execute <code>reboot</code> and remove the USB drive as the system restarts. You will then be greeted by the TTY login screen. Login using the user credentials you created, and you are officially in!
 	 </p>
 
       </div>
 
       <!-- RIGHT SIDE (larger image) -->
       <div class="col-md-4 text-md-end">
-	 <img src="assets/arch2/login_ttyl.png"
-	      alt="lsblk output"
+	 <img src="assets/03_arch2/login_ttyl.png"
+	      alt="login"
 	      class="article-img-full img-fluid">
       </div>
 	 <p>
