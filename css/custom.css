@@ -158,12 +158,11 @@ footer {
     display: flex;       /* Allows the pills to sit side-by-side */
     flex-wrap: wrap;     /* This is the magic line that prevents overflow */
     gap: 8px;            /* Adds consistent spacing between pills */
-    margin-top: 1rem;    /* Optional: adds space above the pill section */
 }
 
 .tag-pill {
     display: inline-block;
-    padding: 0.25rem 0.75rem;
+    padding: 6px 14px;
     background-color: #325315a; /* Or your preferred theme color */
     color: #fff;
     border-radius: 50px;    /* Makes them look like pills */
