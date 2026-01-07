@@ -154,6 +154,9 @@
 # Unmount the USB before writing
 umount /dev/sdb*
 
+# Format drive to .ext4 
+sudo mkfs.ext4 /dev/sdb
+
 # Locate your iso image and flash it to the USB
 sudo dd if=arch-linux.iso of=/dev/sdb status=progress
      </code></pre>
@@ -201,7 +204,7 @@ timedatectl
 	       <div class="card-body text-start">
       <h4 class="fw-bold">Partition 1: EFI Boot</h4>
       <p>
-      Let's make the EFI partition. This partition acts as the storage for the UEFI boot loaders, applications, and drivers to be launched by the firmware. This is mandatory for UEFI to boot. We will use <code>lbslk</code> to identify our primary hard drives. It could be dev/nvme0 or dev/sda. In my case, it's the latter. Run <code>fdisk /dev/sda</code> to initiate the fdisk utility. Type <code>g</code> to create a new GPT partition table, followed by <code>n</code> to create a new partition. Select partition <code>1</code> and <code>+1G</code> to create a partition of 1 Gigabyte, more than sufficient for the EFI system. Then, specify the filesystem type by typing <code>t</code> and selecting <code>1</code> for <i>EFI</i>. 
+      Let's make the EFI partition. This partition acts as the storage for the UEFI boot loaders, applications, and drivers to be launched by the firmware. This is mandatory for UEFI to boot. We will use <code>lbslk</code> to identify our primary hard drives. It could be <code>dev/nvme0n1</code> or <code>dev/sda</code>. In my case, it's the latter. Run <code>fdisk /dev/sda</code> to initiate the fdisk utility. Type <code>g</code> to create a new GPT partition table, followed by <code>n</code> to create a new partition. Select partition <code>1</code> and <code>+1G</code> to create a partition of 1 Gigabyte, more than sufficient for the EFI system. Then, specify the filesystem type by typing <code>t</code> and selecting <code>1</code> for <i>EFI</i>. 
       </p>
       <p>
       <i>Note: <code>L</code> display all the available partition types.</i>

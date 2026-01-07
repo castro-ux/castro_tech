@@ -160,10 +160,10 @@ a/b/c
 	     <li><b>c</b> is the basename</li>
        </ul>
        <p>
-       If a symlink appears anywhere in the dirname component, the system automatically dereferences it. For example, consider the following path: <code>~/.dotfiles/hypr/.config/hypr/hyprland.conf</code>. If the <code>hypr</code> directory is a symlink pointing to <code>~/.config/hypr</code>, the kernel transparently resolves (dereferences) the link and continues searching for the basename, <code>hyprland.conf</code>. 
+       If a symlink appears anywhere in the dirname component, the system automatically dereferences it. For example, consider the path: <code>~/.dotfiles/hypr/.config/hypr/hyprland.conf</code>. If the <code>hypr</code> directory is a symlink pointing to <code>~/.config/hypr</code>, the kernel transparently resolves (dereferences) the link and continues searching for the basename, <code>hyprland.conf</code>. 
        </p>
        <p>
-       Note: If a symlink target is moved, renamed, or deleted, the link becomes broken. Both absolute and relative paths can be used, but relative paths are often more resilient when reorganizing files. All file operations act on the target, not the link itself.
+       <b>Note:</b> If a symlink target is moved, renamed, or deleted, the link becomes broken. Both absolute and relative paths can be used, but relative paths are often more resilient when reorganizing files. All file operations act on the target, not the link itself.
       </p>
 
       <div class="card-body text-start">
@@ -214,11 +214,11 @@ ln -sf "HOME/.dotfiles/bashrc/.bashrc" "$HOME/.bashrc"
 	Key concepts:
 	</p>
 	<ul>
-	  <li><b>Package</b>: A collection of files or folder administered as a unit</li>
-	  <li><b>Target directory</b>: Where the package appears to be installed</li>
-	  <li><b>Stow directory</b>: Where all packages are stored</li>
-	  <li><b>Installation image</b>: The layout of files/directories needed by the package relative to the targer directory</li>
-	  <li><b>Package directory</b>: A directory inside the Stow directory containing a package's installation image</li>
+	  <li><b>Package</b>: A collection of files or folder administered as a unit.</li>
+	  <li><b>Target directory</b>: Where the package appears to be installed.</li>
+	  <li><b>Stow directory</b>: Where all packages are stored.</li>
+	  <li><b>Installation image</b>: The layout of files/directories needed by the package relative to the targer directory.</li>
+	  <li><b>Package directory</b>: A directory inside the Stow directory containing a package's installation image.</li>
        </ul>
        <p>For example, running <code>stow hypr</code>from inside <code>~/.dotfiles</code> creates symlinks at <code>~/.config/hypr/</code>. The files appear to reside there, but the actual data remains in <code>~/.dotfiles</code>, making the setup portable across machines.
 	</p>
@@ -289,7 +289,7 @@ stow -D bashrc
      <div class="card-body text-start">
 	    <h4 class="fw-bold">Github Setup</h4>
 	 <p>
-	 To move seemlessly between machines, hosting your dotfiles on Github or Forjego dramatically improves your workflow. Clone your repository, install Stow or run your setup script, and your environment is restored. I recently wrote my first setup script. While it's far from perfect, it works. It currently supports both Stow and manual symlinking, allowing me to comment out whichever approach I don't want to use. Check out my <a href="https://github.com/castro-ux/.dotfiles" target="_blank" rel="noopener noreferrer">install script</a>.
+	 To move seemlessly between machines, hosting your dotfiles on Github or Forjego dramatically improves your workflow. Clone your repository, install Stow, run your setup script, and your environment is restored. I recently wrote my first setup script. While it's far from perfect, it works. It currently supports both Stow and manual symlinking, allowing me to comment out whichever approach I don't want to use. Check out my <a href="https://github.com/castro-ux/.dotfiles" target="_blank" rel="noopener noreferrer">install script</a>.
 
 	 </p>
 	 </div>
