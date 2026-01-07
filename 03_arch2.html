@@ -238,9 +238,10 @@ vim arch.conf
 # vim boot/loader/entries/arch.conf
 title Arch Linux
 linux /vmlinuz-linux
+initrd /intel-ucode.img
 initrd /initramfs-linux.img
 
-options rd.luks.name=UUID=archie root=/dev/archie/root  rw
+options rd.luks.name=UUID=cryptlvm root=/dev/archie/root  rw
 	       </code></pre>
       </div>
 

@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="dotfiles" />
+    <meta name="author" content="Leo Castro" />
+    <title>dotfiles setup</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-49S4JFVG49"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-49S4JFVG49');
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Core Theme CSS (includes Bootstrap) -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/dark.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+
+    <!-- Syntax Highlighting Theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css"
+    />
+      <style>
+      /* Inline hyperlinks (purple, bold, no underline) */
+      p a {
+	text-decoration: none !important;
+	font-weight: 700;
+	color: #9b2dd1;
+      }
+      p a:hover {
+	text-decoration: none !important;
+	opacity: 0.85;
+      }
+      /* Highlight.js comment color (bash)*/
+      .hljs-comment,
+      .hljs-quote {
+	color: #53b7ff !important;
+      }
+      /* Paragraph spacing */
+      p {
+	line-height: 1.65;
+      }
+      /* Code block styling */
+      .code-box pre {
+	background-color: #1b263b;                  /* navy background */
+	color: #f8f9fa;                             /* light text */
+	border-left: 4px solid #9b2dd1;             /* purple accent */
+	padding: 0rem 1rem;                         /* vertical fixed by line-height */
+	border-radius: 10px;
+	font-size: 0.95rem;
+	line-height: 1.3;
+	overflow-x: auto;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.15);     /* soft depth */
+      }
+      .code-box code {
+	background-color: transparent;
+	color: inherit;                             /* keep syntax highlighting */
+	font-family: "Fira Code", monospace;
+      }
+      </style>
+  
+  </head>
+  <body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white py-3">
+        <div class="container px-5">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bolder navbar-brand-name">Leo Castro</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+		<li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+	    </ul>
+	    </div>
+        </div>
+    </nav>
+
+          <!-- Page Content -->
+    <section class="py-5 project-article">
+       <div class="container px-5">
+       <h1 class="fw-bold text-center mb-4" style="color:#9b2dd1;">.dotfiles</h1>
+
+ <!-- Project Card -->
+      <div class="row gx-5 justify-content-center">
+	    <div class="col-lg-12 col-xl-10">
+	       <div class="article-content">
+
+      <!-- Article Meta. Everything below is now counted for word count -->
+      <div class="article-meta">
+	<div id="article-date">07 January 2026</div>
+	<div>
+	  <span id="article-word-count"></span>
+      &nbsp;·&nbsp;
+	   <span id="article-reading-time"></span>
+	</div>
+      </div>
+      <br>
+
+      <p>
+      The last post was a lot to take in, especially if you're new to Hyprland and its ecosystem of utilities. Believe me, I struggled with it as well. It's best to take your time, experiment, break things, and then come back to it. While many dotfiles repositories are available online, understanding your own configuration makes it easier to understand and adapt other setups when inspiration strikes.
+      </p>
+      <p>
+      Dotfiles are hidden configuration files used to customize your environment. They are called dotfiles because they begin with a <i>dot</i>. By default, the <code>ls</code> command won't list them unless you run <code>ls -a</code>. Some common examples include: <i>.bashrc, .zshrc, .gitconfig,</i> and <i>.tmux.conf</i>.
+      </p>
+      <p>
+      The real headache begins when you change workstations and need to rebuild your entire environment from scratch. By maintaining a central folder synced to GitHub or Forjego, you can keep your configuration consistent across machines. This is accomplished using symbolic links, aka <i>soft links/symlinks</i>. A symlink is a pointer to a target file or directory. It can be thought of as a "shortcut" like in Windows.</p>
+
+
+      <div class="card-body text-start">
+      <h4 class="fw-bold">Terminology</h4>
+       <p>
+       Understanding basic terminology helps clarify how everything fits together. A symlink is a <b>reference </b>to another path (file or directory). To <b>dereference</b> a symlink means to follow that reference until the actual file or directory is reached. Consider the path:
+       </p>
+
+       <div class="code-box mb-4">
+	  <pre><code class="language-bash"> 
+a/b/c
+	  </code></pre>
+       </div>
+
+       <ul>
+	  <li><b>a/b</b> is the dirname</li>
+	     <li><b>c</b> is the basename</li>
+       </ul>
+       <p>
+       If a symlink appears anywhere in the dirname component, the system automatically dereferences it. For example, consider the following path: <code>~/.dotfiles/hypr/.config/hypr/hyprland.conf</code>. If the <code>hypr</code> directory is a symlink pointing to <code>~/.config/hypr</code>, the kernel transparently resolves (dereferences) the link and continues searching for the basename, <code>hyprland.conf</code>. 
+       </p>
+       <p>
+       Note: If a symlink target is moved, renamed, or deleted, the link becomes broken. Both absolute and relative paths can be used, but relative paths are often more resilient when reorganizing files. All file operations act on the target, not the link itself.
+      </p>
+
+      <div class="card-body text-start">
+      <h4 class="fw-bold">Folder Configuration</h4>
+      <p>
+      Before deciding whether to manually manage symlinks, use GNU Stow, or rely on any other tool, your folder structure matters. Manually creating symlinks gives you complete control over organization, rather than following Stow's prescribed layout.
+      </p>
+      <p>
+      My current setup uses a small number of symlinks, but I still follow the folder structure recommended by Stow. This gives me flexibility: if manual tracking syminks becomes too burdensome, I can switch fully to Stow with minimal effort. 
+      </p>
+
+      <!--Image below text-->
+	 <div class="my-4">
+	    <img src="assets/05_dotfiles/folder_structure.png"
+		 alt="dmenu running with five lines" 
+		 class="img-fluid w-100 rounded"> 
+	 </div>
+      </div>
+
+      <h4 class="fw-bold">Manual Symlinks</h4>
+      <p>
+      A major advantage of manually symlinking is that no additional software is required. My workflow is designed so that switching laptops gets me up and running quickly, and exactly how I like it. You can create relative or absolute symlinks. In the examples below, I use the hypr directory and .bashrc to demonstrate both directory and file symlinks. I've also set XDG_CONFIG_HOME = $HOME/.config.
+      </p>
+
+	       <div class="code-box mb-4">
+		  <pre><code class="language-bash"> 
+# Symlink format
+ln -s "target_path" "link_path"
+
+# Target directory
+~/.config/
+└── hypr/
+    ├── hyprland.conf   → ~/.dotfiles/hypr/hyprland.conf
+    ├── hypridle.conf   → ~/.dotfiles/hypr/hypridle.conf
+
+# Folder and file examples 
+ln -sf "$HOME/.dotfiles/hypr/.config/hypr" "XDG_CONFIG_HOME"
+ln -sf "HOME/.dotfiles/bashrc/.bashrc" "$HOME/.bashrc"
+		  </code></pre>
+	       </div>
+	       
+	      
+	       <h4 class="fw-bold">GNU Stow</h4>
+        <p>
+	GNU Stow was originally created for software package management, but evolved into a configuration management tool. Stow is a symlink farm manager, meaning it uses symlinks to make files and directories appear in one location even though they're stored elsewhere on the filesystem. The stow directory serves as the root of the file tree. When Stow is ran, it uses the current directory as the default directory. The destination directory must already exist, as Stow will not create the directory. Stow only creates relative symlinks.  
+	</p>
+	<p>
+	Key concepts:
+	</p>
+	<ul>
+	  <li><b>Package</b>: A collection of files or folder administered as a unit</li>
+	  <li><b>Target directory</b>: Where the package appears to be installed</li>
+	  <li><b>Stow directory</b>: Where all packages are stored</li>
+	  <li><b>Installation image</b>: The layout of files/directories needed by the package relative to the targer directory</li>
+	  <li><b>Package directory</b>: A directory inside the Stow directory containing a package's installation image</li>
+       </ul>
+       <p>For example, running <code>stow hypr</code>from inside <code>~/.dotfiles</code> creates symlinks at <code>~/.config/hypr/</code>. The files appear to reside there, but the actual data remains in <code>~/.dotfiles</code>, making the setup portable across machines.
+	</p>
+
+
+	<div class="code-box mb-4">
+	   <pre><code class="language-bash"> 
+~/.dotfiles/              ← Stow directory
+└── hypr/                 ← Package
+    └── .config/
+        └── hypr/         ← Installation image
+            ├── hyprland.conf
+            ├── hypridle.conf
+            ├── hyprpaper.conf
+            └── hyprlock.conf
+
+	   </code></pre>
+	</div>
+	<p>
+	After running <code>stow hypr</code> from inside <code>~/.dotfiles</code>.
+	</p>
+
+	<div class="code-box mb-4">
+	   <pre><code class="language-bash"> 
+~/.config/hypr/
+├── hyprland.conf   → ~/.dotfiles/hypr/.config/hypr/hyprland.conf
+├── hypridle.conf   → ~/.dotfiles/hypr/.config/hypr/hypridle.conf
+├── hyprpaper.conf  → ~/.dotfiles/hypr/.config/hypr/hyprpaper.conf
+└── hyprlock.conf   → ~/.dotfiles/hypr/.config/hypr/hyprlock.conf
+	   </code></pre>
+	</div>
+
+   <div class="card-body text-start">
+       <h4 class="fw-bold">Verifying Symlinks</h4>
+       <p>
+       Once symlinks are created, manually or via Stow, you can confirm using <code>ls -l</code>. Symlinks appear with a leading <code>l</code> in the permissions field (e.g., <code>lrwxrwxrwx</code>). You'll also notice the length of the symlink is <i>48 bytes</i> compared to the target directory, <i>4096 bytes</i>.
+       </p>
+    </div>
+ 
+      <!--Image below text-->
+	 <div class="my-4">
+	    <img src="assets/05_dotfiles/terminal_sym.png"
+		 alt="dmenu running with five lines" 
+		 class="img-fluid w-100 rounded"> 
+	 </div>
+      </div>
+
+
+      <div class="card-body text-start">
+	    <h4 class="fw-bold">Removing Symlinks</h4>
+	    <p>
+	    To remove symlinks, use <code>rm</code> or <code>stow -D</code> if you're using Stow. Removing the link does not affect the target file. But, deleting targets can leave broken links behind.
+	  
+      </p>
+	 </div>
+
+	 <div class="code-box mb-4">
+	       <pre><code class="language-bash"> 
+# Remove symlinks manually
+rm .bashrc 
+
+# Remove symlinks via Stow
+stow -D bashrc
+	       </code></pre>
+	 </div>
+
+
+     <div class="card-body text-start">
+	    <h4 class="fw-bold">Github Setup</h4>
+	 <p>
+	 To move seemlessly between machines, hosting your dotfiles on Github or Forjego dramatically improves your workflow. Clone your repository, install Stow or run your setup script, and your environment is restored. I recently wrote my first setup script. While it's far from perfect, it works. It currently supports both Stow and manual symlinking, allowing me to comment out whichever approach I don't want to use. Check out my <a href="https://github.com/castro-ux/.dotfiles" target="_blank" rel="noopener noreferrer">install script</a>.
+
+	 </p>
+	 </div>
+
+      <div class="card-body text-start">
+	    <h4 class="fw-bold">Closing Thoughs</h4>
+	 <p>
+	 Manually symlinking files and folders feels intimidating, but once you understand how it works, especially through visuals, the process is straigh forward. While GNU Stow is a powerful too, my current setup is pretty minimal. For users managing larger or more complex configuration, Stow quickly becomes invaluable. In the end, it comes down to comfort and personal preference. What matters the most is learning how to organize, version control, and deploy your dotfiles reliably. This post only scratches the surface. For a deeper understanding, refer to <code> man symlinks</code> and <code>man stow</code> for deeper insight and configuration options. 
+	 </p>
+	 </div>
+  </div> <!-- END article-content -->
+  <br>
+
+            <!-- Back Button -->
+	 <div class="text-center">
+	     <a class="btn-back" href="projects.html">
+	     ← Back to Projects
+	   </a>
+	 </div>
+       </div>
+     </div>
+   </div>
+ </main>
+
+
+  <!-- FOOTER -->
+  <footer class="py-4 mt-auto" style="background-color: transparent;">
+     <div class="container px-5 text-center">
+	<div class="mb-2">
+	   <a class="small footer-link" href="index.html">Home</a>
+	   <span class="mx-2">&middot;</span>
+	   <a class="small footer-link" href="projects.html">Projects</a>
+	   <span class="mx-2">&middot;</span>
+	   <a class="small footer-link" href="contact.html">Contact</a>
+	</div>
+	<div class="small text-white copyright">&copy; Castro 2025</div>
+     </div>
+  </footer>
+
+    <!-- Scripts -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // 1. Get article text
+  const articleText = document.querySelector(".article-content").innerText;
+
+  // 2. Count words
+  const wordCount = articleText.trim().split(/\s+/).length;
+
+  // 3. Reading time (average 200 words/min)
+  const readingTime = Math.ceil(wordCount / 200);
+
+  // 4. Insert values into the page
+  document.getElementById("article-reading-time").textContent =
+    `${readingTime} min read`;
+
+  document.getElementById("article-word-count").textContent =
+    `${wordCount} words`;
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
+
+
+
