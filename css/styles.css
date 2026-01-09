@@ -11733,11 +11733,8 @@ html {
   }
 }
 
-
-
+/* custom from me */
 .project-card {
-  height: 350px; /* Force height across cards */
-  min-height: 350px;
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -11745,20 +11742,16 @@ html {
 
 /* Clean, correct image wrapper */
 .project-img-wrapper {
-  flex: 0 0 50%;
-  height: 100%;
+  flex: 0 0 40%;
+  min-height: 300px;
   overflow: hidden;
   position: relative;
 }
 
 .project-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
   width: 100%;
   height: auto;
-  min-height: 100%;
-  transform: translate(-50%, -50%);
+  object-fit: cover;
 }
 
 /* Ensures image fills its space consistently */
@@ -11794,7 +11787,8 @@ html {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-top: auto;  /* pushes tags down */
+  margin-top: 1.5rem;  /* adds space from the text */
+  padding-bottom: 0.5rem; /*prevents tags from touching the card edge */
 }
 
 .tag-pill {
@@ -11804,6 +11798,7 @@ html {
   border-radius: 18px;
   font-size: 0.85rem;
   border: 1px solid rgba(41,47,236,0.35);
+  white-space: nowrap; /* Prevents a single tag from breaking across lines */
 }
 
 /*inline code */
