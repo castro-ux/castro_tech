@@ -135,9 +135,13 @@ footer {
     padding-bottom: 0rem !important;
 }
 
-/* flexbox fix, no overflow */ 
-.project-card .card-body {
-  min-width: 0;
+
+.project-card .p-4 {
+  min-height: 0;
+}
+
+.project-card {
+  overflow: hidden; /* REQUIRED */
 }
 
 /* Mobile fix */
@@ -154,20 +158,5 @@ footer {
   }
 }
 
-.tag-container {
-    display: flex;       /* Allows the pills to sit side-by-side */
-    flex-wrap: wrap;     /* This is the magic line that prevents overflow */
-    gap: 8px;            /* Adds consistent spacing between pills */
-}
-
-.tag-pill {
-    display: inline-block;
-    padding: 6px 14px;
-    background-color: #325315a; /* Or your preferred theme color */
-    color: #fff;
-    border-radius: 50px;    /* Makes them look like pills */
-    font-size: 0.8rem;
-    white-space: nowrap;    /* Keeps the text inside a single pill from breaking */
-}
 
 
