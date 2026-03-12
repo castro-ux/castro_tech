@@ -122,7 +122,7 @@
  <!-- Project Card -->
       <div class="row gx-5 justify-content-center">
 	    <div class="col-lg-12 col-xl-10">
-
+	       <div class="article-content">
 
       <!-- Article Meta -->
       <div class="article-meta">
@@ -134,50 +134,47 @@
 	</div>
       </div>
       <br>
-
-      <p>
-       Having just graduated, I wasn’t quite sure where to start showcasing my work. While taking my Data Science SQL course, I followed <a href="https://www.youtube.com/@amigoscode" target="_blank" rel="noopener noreferrer">@amigoscode </a>
-       tutorials alongside the class and found him to be an excellent instructor. I had bookedmarked Nelson's and Nana's <a href="https://www.youtube.com/watch?v=Wf2eSG3owoA" target="_blank" rel="noopener noreferrer">Docker and Kubernetes – 
-       Full Course for Beginners </a> a while back and finally had the time to finish watching it. Now was the perfect time to dive into containerization and build a personal website. I used 
-       a <a href="https://startbootstrap.com" target="_blank" rel="noopener noreferrer">Bootstrap template</a> to streamline the development 
-       process.	     
-     </p>
-
-     <p>
-     I built and deployed a static webpage using Nginx as the web server. The official <a href=" https://hub.docker.com/_/nginxNginx" target="_blank" rel="noopener noreferrer"> Nginx Docker </a>image 
-     documentation is a great reference for creating and customizing configurations. Nginx  
-     functions as a reverse proxy and web server that supports HTTP, HTTPS, SMTP, POP3, and IMAP protocols, while also providing caching capabilitie.	
-     </p>
-     <p>
-     This is more of my personal overview of running a setup than an actual tutorial. Below is an overview of the basic git commands. It seems scary at first, but once you have done it a number of 
-     times, it becomes a breeze.
-     </p>
-  
-     <!-- Image on Top, Text Below -->
-     <div class="card border-0 text-center my-3">
-     <!-- Image on top -->
-     <img src="assets/01_static/git_pull.png" 
-	  alt="Git diagram" 
-	  class="card-img-top mx-auto d-block" 
-	  style="max-width:410px; height:auto;">
-     </div>
-     <br>
-    
-     <!-- Text content below -->
+     
      <div class="card-body text-start">
-     <h4 class="fw-bold">Exposing Port</h4>
-     <p>
-     I then exposed my directory contents to an external port and opened my browser to <code>http://localhost:8000</code>. Name your container <i>custom_name</i> and the 
-     image <i> some-image.</i> 
-     </p>
-     </div>
+	    <p>
+	     Having just graduated, I wasn’t quite sure where to start showcasing my work. While taking my Data Science SQL course, I followed <a href="https://www.youtube.com/@amigoscode" target="_blank" rel="noopener noreferrer">@amigoscode </a> tutorials alongside the class and found him to be an excellent instructor. I had bookedmarked Nelson's and Nana's <a href="https://www.youtube.com/watch?v=Wf2eSG3owoA" target="_blank" rel="noopener noreferrer">Docker and Kubernetes – Full Course for Beginners </a> a while back and finally had the time to finish watching it. Now was the perfect time to dive into containerization and build a personal website. I used a <a href="https://startbootstrap.com" target="_blank" rel="noopener noreferrer">Bootstrap template</a> to streamline the development process. 
+	   </p>
+	   <p>
+	   I built and deployed a static webpage using Nginx as the web server. The official <a href=" https://hub.docker.com/_/nginxNginx" target="_blank" rel="noopener noreferrer"> Nginx Docker </a>image 
+	   documentation is a great reference for creating and customizing configurations. Nginx  
+	   functions as a reverse proxy and web server that supports HTTP, HTTPS, SMTP, POP3, and IMAP protocols, while also providing caching capabilitie.	
+	   </p>
+	   <p>
+	   This is more of my personal overview of running a setup than an actual tutorial. Below is an overview of the basic git commands. It seems scary at first, but once you have done it a number of 
+	   times, it becomes a breeze.
+	   </p>
+	
+	   <div class="card border-0 text-center my-3">
+	   <img src="assets/01_static/git_pull.png" 
+		alt="Git diagram" 
+		class="card-img-top mx-auto d-block" 
+		style="max-width:410px; height:auto;">
+	   </div>
+      </div>
 
-     <div class="code-box mb-4">
-	 <pre><code class="language-bash">
+      <br> 
+
+     <div class="card-body text-start">
+	<h4 class="fw-bold">Exposing Port</h4>
+	   <p>
+	   I then exposed my directory contents to an external port and opened my browser to <code>http://localhost:8000</code>. Name your container <i>custom_name</i> and the 
+	   image <i> some-image.</i> 
+	   </p>
+
+	   <div class="code-box mb-4">
+	       <pre><code class="language-bash">
 # create Docker image 
 docker run --name custom_name -d -p 8000:80 some-image
-	 </code></pre>
+	       </code></pre>
+	   </div>
+     </div>
 
+     <div class="card-body text-start">
 	 <h4 class="fw-bold">Enter Container Shell</h4>
 	 <p>
 	 If you want to view your directory inside your container, the <code>docker exec</code> commands allows entry using <code>sh</code>. 
@@ -192,6 +189,11 @@ docker exec -it some-image-nginx sh
 ls -al 
 cd usr/share/nginx/html
 	   </code></pre>
+	 </div>
+     </div>	 
+     
+
+     <div class="card-body text-start">
 	   <h4 class="fw-bold">Commit and Push</h4>
 	   <p>
 	   I used Github Pages to publish my static webpage. After setting up my SSH key, I was able to commit and push changes directly from my local directory to Github.
@@ -204,6 +206,8 @@ git add .
 git commit -m “description” 
 git push -u origin main 
 	       </code></pre>
+	   </div>
+
 	       <br>
 	       <p>
 	       The above is a simplistic overview, but in reality it took about a week of of playing with Docker and Git commands. CSS and HTML editing took another week, though the Bootstrap 
@@ -211,7 +215,6 @@ git push -u origin main
 	       one point, I contemplated creating a Next.js or Flask app with postgres for the <i>Contact Me</i> page, but opted to use formspree.io as I just needed to get the website up and 
 	       running. That could be for a future post. I also created a .gitignore file to keep unnecessary files out of version control as I continue building new projects.
 	       </p>
-
 	       <p>
 	       Overall, this was a great foundational project to start with. I’ve worked with Docker before, but only at a surface level. Being an Arch user, I’m comfortable working from the 
 	       terminal, but my Neovim workflow improved significantly throughout this project. I did get sidetracked starting another project before circling back to complete this one. There were 
@@ -220,24 +223,25 @@ git push -u origin main
 	       <p>
 	       Thanks for reading if you made it this far! Click <a href="https://castro-ux.github.io/web/" target="_blank" rel="noopener noreferrer">here</a> for the initial version of my blog.
 	       </p>
-	   </div>
-	 </div>
-</section>
+     </div>
+	    </div>
 
-            <!-- Back Button -->
-	 <div class="text-center">
-	     <a class="btn-back" href="projects.html">
+   <!-- Clearfix to push button below floated image -->
+	   <div class="clearfix"></div>
+	 </div>
+
+	 <!-- Back Button pushed below everything -->
+	 <div class="text-center mt-5 pb-4">
+	   <a class="btn-back" href="projects.html">
 	     ← Back to Projects
 	   </a>
 	 </div>
-       </div>
-     </div>
-   </div>
- </main>
+      </div>
+    </main>
 
 
   <!-- FOOTER -->
-  <footer class="py-4 mt-auto" style="background-color: transparent;">
+  <footer class="py-2" style="background-color: transparent;">
      <div class="container px-5 text-center">
 	<div class="mb-2">
 	   <a class="small footer-link" href="index.html">Home</a>
@@ -247,7 +251,7 @@ git push -u origin main
 	   <a class="small footer-link" href="projects.html">Contact</a>
 	</div>
 
-	<div class="small text-white copyright">&copy; Castro 2025</div>
+	<div class="small text-white copyright">&copy; Castro 2026</div>
      </div>
   </footer>
 
@@ -257,7 +261,7 @@ git push -u origin main
 document.addEventListener("DOMContentLoaded", function () {
 
   // 1. Get article text
-  const articleText = document.querySelector(".card-body").innerText;
+  const articleText = document.querySelector(".article-content").innerText;
 
   // 2. Count words
   const wordCount = articleText.trim().split(/\s+/).length;

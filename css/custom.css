@@ -92,7 +92,7 @@ footer a:hover {
 }
 
 /* Prevent article images from floating next to code blocks */
-.project-article img {
+.project-article .code-box img {
     float: none !important;
     display: block;
     margin: 20px auto !important; /* centered + spacing */
@@ -103,7 +103,6 @@ footer a:hover {
     clear: both;
 }
 
-/* screenshots stretch to code-box dimensions */
 .article-img-full {
     width: 100%;
     max-width: 100%;
@@ -112,6 +111,14 @@ footer a:hover {
     box-shadow: none;
     display: block;
     margin: 0 auto 1rem auto;
+}
+
+/* Add this override for floated images */
+.article-img-full.float-md-end {
+    width: 40%;
+    max-width: 40%;
+    display: inline;
+    margin: 0 0 1rem 1.5rem;
 }
 
 /* Reduce hero spacing */

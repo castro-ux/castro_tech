@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="obsidian script using dmenu" />
+    <meta name="author" content="Leo Castro" />
+    <title>dotfiles setup</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-49S4JFVG49"></script>
+    <script>
+       window.dataLayer = window.dataLayer || [];
+       function gtag(){dataLayer.push(arguments);}
+       gtag('js', new Date());
+       gtag('config', 'G-49S4JFVG49');
+    </script>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Bootstrap Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <!-- Core Theme CSS (includes Bootstrap) -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/dark.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+
+    <!-- Syntax Highlighting Theme -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark-dimmed.min.css"
+    />
+      <style>
+      /* Inline hyperlinks (purple, bold, no underline) */
+      p a {
+	text-decoration: none !important;
+	font-weight: 700;
+	color: #9b2dd1;
+      }
+      p a:hover {
+	text-decoration: none !important;
+	opacity: 0.85;
+      }
+      /* Highlight.js comment color (bash)*/
+      .hljs-comment,
+      .hljs-quote {
+	color: #53b7ff !important;
+      }
+      /* Paragraph spacing */
+      p {
+	line-height: 1.65;
+      }
+      /* Code block styling */
+      .code-box pre {
+	background-color: #1b263b;                  /* navy background */
+	color: #f8f9fa;                             /* light text */
+	border-left: 4px solid #9b2dd1;             /* purple accent */
+	padding: 0rem 1rem;                         /* vertical fixed by line-height */
+	border-radius: 10px;
+	font-size: 0.95rem;
+	line-height: 1.3;
+	overflow-x: auto;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.15);     /* soft depth */
+      }
+      .code-box code {
+	background-color: transparent;
+	color: inherit;                             /* keep syntax highlighting */
+	font-family: "Fira Code", monospace;
+      }
+      </style>
+  
+  </head>
+  <body class="d-flex flex-column h-100 bg-light">
+    <main class="flex-shrink-0">
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-white py-3">
+        <div class="container px-5">
+            <a class="navbar-brand" href="index.html">
+                <span class="fw-bolder navbar-brand-name">Leo Castro</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+		<li class="nav-item">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
+	    </ul>
+	    </div>
+        </div>
+    </nav>
+
+          <!-- Page Content -->
+    <section class="py-5 project-article">
+       <div class="container px-5">
+       <h1 class="fw-bold text-center mb-4" style="color:#9b2dd1;">Beyond the Whistle: How I Dockerized My Referee Workflow</h1>
+
+ <!-- Project Card -->
+      <div class="row gx-5 justify-content-center">
+	    <div class="col-lg-12 col-xl-10">
+	       <div class="article-content">
+
+      <!-- Article Meta. Everything below is now counted for word count -->
+      <div class="article-meta">
+	<div id="article-date">12 March 2026</div>
+	<div>
+	  <span id="article-word-count"></span>
+      &nbsp;·&nbsp;
+	   <span id="article-reading-time"></span>
+	</div>
+      </div>
+      <br>
+
+
+      <div class="card-body text-start">
+	 <h4 class="fw-bold">Docker Novelty</h4>
+	    <p>
+	    My first direct experience with dependency hell happened about a year ago during a pediatric data science challenge. At that time, I had never touched Docker. Version control was messy, managing environments across four teammates was difficult, and syncing code for submissions felt laborious. We performed well in the first round, but our code failed to run properly in the second round. The real issue? We were running Python code against a submission script that kept evolving during the competition. Keeping up with the dependency changes and script updates was beyond my comfort zone at the time.  
+	    </p>
+	    <p>
+	    About five months ago, I started using Docker while building my website. I could start and stop a container, but I truly didn't understand the process. It worked and that was good enough. Over the past month, I've focused intentionally on Docker container management through KubeCraft. To solidify my understanding, I built something practical. A project I would actually use instead of just experimenting with. 
+	    </p>
+
+      <div class="card-body text-start">
+	 <h4 class="fw-bold">A Practical Reason to Learn</h4>
+	    <p>
+	    A little bit about me: I played football competitively from a young age and became a referee about six years ago. Playing and officiating are vastly different — you need thick skin as an official! Rules change annually in subtle ways, and players and coaches don't always understand the intricacies. Applying the rules in real time is an art because the game is fast and dynamic, decisions must occur in split seconds, and you must manage both your emotions and others' effectively. It's also a game of angles and we don't always have the perfect one.
+	    </p>
+	    <p>
+	     To advance to higher officiating levels, specific qualifying matches must be tracked and submitted. The challenge is that assignments come through five different mobile apps. At the end of each year, consolidating match data and calculating mileage becomes tedious. Instead of manually reconciling everything each season, I decided to build a Dockerized workflow to manage it. 
+	    </p>
+	    <p>
+	    <b>The Goal:</b> 
+	    <ol>
+	       <li class="mb-1">Import match data from a CSV file</li>
+	       <li class="mb-1">Clean the data in Jupyter</li>
+	       <li class="mb-1">Load data into a PostGIS database</li>
+	       <li class="mb-1">Calculate round-trip miles from home to each park</li>
+	       <li class="mb-1">Sum total season mileage</li> 
+	    </p>
+	 </div>
+
+
+<!--insert horizontal line below-->
+      <hr class="border-primary-border-2 opacity-35 w-80 mx-auto">
+
+
+      <div class="row align-items-start mb-4">
+	 <!-- LEFT TEXT-->
+	 <div class="col-md-5">
+	    <h4 class="fw-bold">Architecture Setup</h4>
+	    <p>
+	    Docker files are stored on a writable container layer that sits on immutable image layers. Data is not persistent when a container is destroyed. Docker has four mount types for data persistence. 
+	    <ul>
+	       <li class="mb-3"><b>Bind mount</b>: links a folder on your physical machine directly to the container. Easy, but the container becomes dependent on your local file system structure.</li>
+	       <li class="mb-3"><b>Volume mount</b>: fully managed by Docker and not tied to a specific folder on the host machine. This setup is more portable and self-contained. </li>
+	       <li class="mb-3"><b>tmpfs mount</b>: files stored on the host's memory. Suitable for temporary memory storage such as sensitive data. Used for Linux containers. </li>
+	       <li class="mb-3"><b>Named pipes</b>: used for communication between the Docker host and container. Primarily used for Windows containers. </li>
+	    </ul>
+	    </p>
+	 </div>
+
+ 	 <!-- RIGHT SIDE --> 
+	 <div class="col-md-7 col-sm-12" style="padding-top:55px;"> 
+	    <img src="assets/07_postgis/mount3.png"
+		 alt="mount types" 
+		 class="img-fluid rounded w-100"
+		 style="max-width: 100%; height: auto;">
+       </div> 
+      </div>
+
+	 <div class="mb-4">
+	    <p>
+	    I chose volume mounts for their portability. My setup uses two containers: Jupyter and PostGIS. They communicate over a shared Docker network and volume. For example, editing a SQL script inside Jupyter, <code>/home/jovyan/app/parks2025.sql</code>, makes it accessible inside the PostGIS container at <code>/tmp/parks2025.sql</code>. Two isolated services share the same volume, but mounted at different paths.
+	   </p>
+	 </div>
+
+
+      <div class="card-body text-start">
+	 <h4 class="fw-bold">The Principle of Least Privilege</h4>
+	 <p>
+	 One of the most important and difficult lessons for me was permissions. The principle of least privilege means giving minimum access rights to users and processes to perform their tasks. Conceptually simple, but operationally frustrating. I repeatedly hit <i>permission denied</i> errors because I didn't understand user management. 
+	 </p>
+	 <p>If no <code>USER</code> is defined in a Dockerfile, the container defaults to <code>root</code>. However, root privileges are typically only needed during system package installation, otherwise the container should run as a restricted user. In Jupyter's Docker images, the default user is <code>jovyan</code> with UID 1000 and GID 100. By explicitly defining <code>USER 1000:100</code>, the container runs with limited permissions while maintaining proper volume access. It was a foundational lesson in container security and reproducibility. This article provides a great overview: <a href="https://www.docker.com/blog/understanding-the-docker-user-instruction/" target="_blank" rel="noopener noreferrer">Understanding the Docker USER Instruction</a>. 
+	 </p>
+
+      <div class="card-body text-start">
+	 <h4 class="fw-bold">Project Setup </h4>
+	 <p>
+	 Six core files power this project, all available in my <a href="https://github.com/castro-ux/lab/tree/main/referee_miles" target="_blank" rel="noopener noreferrer">GitHub Lab repo</a>. 
+
+	 <ol>
+	    <li class="mb-2"><b>requirements.txt:</b> installs numpy and pandas into the Python environment.</li>
+	    <li class="mb-2"><b>Dockerfile:</b> customizes the image and configures the user. Root privileges are temporarily escalated only when necessary, then dropped to the default <i>jovyan</i> user (UID 1000, GID 100) to align with shared volume permissions. Vim is installed as a text editor using sudo, but conda/pip dependencies do not require elevated privileges. For additional runtime configurations, refer to the <a href="https://jupyter-docker-stacks.readthedocs.io/en/latest/using/common.html" target="_blank" rel="noopener noreferrer">Docker Stacks</a> documentation.</li>  
+	    <li class="mb-2"><b>docker-compose.yml:</b> acts at the orchestration layer. It connects the containers through a shared network, manages volumes, and injects credentials via environment variables.</li>
+	    <li class="mb-2"><b>parks2025.sql:</b> contains all spatial logic, including geography calculations, distance computations, and aggregations. The PostGIS documentation was essential for understanding the difference between geography and geometry types.</li>
+	    <li class="mb-2"><b>.env:</b> manages database credentials. No hard-coded passwords. In practice, this file would be listed in .dockerignore for sensitivity, but it is included in the repo for demonstration purposes only.</li>
+	    <li class="mb-2"><b>.dockerignore:</b> prevents unnecessary files from being tracked and keeps sensitive configurations private.</li>
+	 </ol>
+      </p>
+      </div>
+      <br>
+
+<!--insert horizontal line below-->
+      <hr class="border-primary-border-2 opacity-35 w-80 mx-auto">
+
+      <h4 class="fw-bold">1. Build the Image and Start the Container</h4>
+      <p>
+      Now that the project files are set up, let's spin up the containers. First, we build the images and run the containers in detached mode, then verify that the shared volumes are active. Running <code>whoami</code> confirms that the <code>jovyan</code> user is active inside the Jupyter container.  
+      </p>
+
+      <div class="code-box mb-4">
+	 <pre><code class="language-bash"> 
+#build container in detached mode	 
+docker-compose up -d --build
+
+#shared volumes
+docker exec -it my-jupyter bash
+docker exec -it my-postgis bash
+	 </code></pre>
+      </div>
+
+      <div class="card-body text-start">
+	 <h4 class="fw-bold">2. Data Cleaning in Jupyter</h4>
+	 <p>
+	 Run <code>docker logs my-jupyter</code> to view the custom URL Docker generates for accessing JupyterLab. If you open <a href="http://localhost:8889/lab" target="_blank" rel="noopener noreferrer">http://localhost:8889/lab</a>, you will need to paste the authentication token from the container logs. Alternatively, you can hardcode a token in the docker-compose.yml file so the same token is used every time the container starts. For example, <a href="http://localhost:8889/lab?token=my-token" target="_blank" rel="noopener noreferrer">http://localhost:8889/lab?token=my-token</a>, passes the authentication token directly through the URL. This configuration is commented out for reference in my <code>docker-compose.yml</code>. 
+	 </p>
+
+	 <p>
+	 Once inside Jupyter, create a new notebook and load the CSV file. The <i>Date</i> column contains inconsistent formats, so it is standardized to <code>yyyy-mm-dd</code>. I found innaccuracies when batching GPS coordinates for the parks and ultimately verified them manually. I'm not in the geospatial domain, so I'm sure there are more scalable approaches. 
+	 </p>
+	 <p><b>Note</b>: PostGIS expects coordinates in Latitude then Longitude, which differs from how we typically read coordinates on a map (Longitude, Latitude).
+	 </p>
+
+	 <div class="code-box mb-4">
+	    <pre><code class="language-bash"> 
+<i>#games.ipynb</i>
+
+import pandas as pd
+
+df = pd.read_csv('sample_miles2025.csv') 
+
+#refine and reformat columns 
+df = df[['Game', 'Date', 'Park', 'Latitude', 'Longitude']]
+df['Date'] = pd.to_datetime(df['Date'], format='mixed')
+df_clean = df.sort_values(by='Date', ascending=True).reset_index(drop=True)
+
+#export df
+df_clean.to_csv('imports/df_sorted.csv', index=False)
+	    </code></pre>
+	 </div>
+
+<!--Image below text-->
+	 <div class="my-4">
+	    <img src="assets/07_postgis/df_dates2.png"
+		 alt="Pandas dataframe showing inconsistent date formats" 
+		 class="img-fluid w-100 mx-auto d-block rounded shadow-sm"> 
+	 </div>
+      
+
+      <div class="code-box mb-4">
+      <h4 class="fw-bold">3. Spatial Analysis with PostGIS</h4>
+       <p>
+       For spatial processing, I used psql (PostgreSQL interactive terminal). If you prefer a GUI, then use pgAdmin. Once psql is initiated, connect to the postgis database, and execute <a href="https://github.com/castro-ux/lab/blob/main/referee_miles/parks2025.sql" target="_blank" rel="noopener noreferrer">parks2025.sql</a>. 
+
+       </p>
+
+      <div class="code-box mb-4">
+	 <pre><code class="language-bash"> 
+docker exec -it my-postgis psql -U admin -d postgres
+\c postgis
+\i /tmp/parks2025.sql
+	 </code></pre>
+      </div>
+      
+      <div class="code-box mb-4">
+      <h5 class="fw-bold">Coordinate Handling</h5>
+      <p>
+      To perform distance calculations, coordinates must be converted into a geography type. Using SRID 4326 ensures that the data aligns with the WGS84 coordinate system, which represents coordinates in decimal degrees.
+      </p>
+
+      <div class="code-box mb-4">
+	 <pre><code class="language-bash"> 
+SET geom = ST_SetSRID(ST_MakePoint(longitude, latitude), 4326)
+	 </code></pre>
+      </div>
+
+      <ul>
+	 <li>4326 = WGS84 coordinate system</li>
+	 <li>Coordinates are in decimal degress (DD)</li>
+	 <li>Penn Station = 40.750638  -73.993899</li>
+      </ul>
+      <p>
+      The geography type treats the Earth as a sphere and returns distances in meters. Multiplying by 0.000621371 converts meters into miles. The final output contains the matches ordered by date, along with one-way and round-trip distances. Total seasonal mileage is calculated and exported into a CSV file. If desired, run <code>docker cp my-postgis:/path/to/file.csv</code> to copy the file to your localhost.
+      </p>
+
+<!--Image below text-->
+	 <div class="my-4">
+	    <img src="assets/07_postgis/sql_table.png"
+		 alt="Pandas dataframe showing inconsistent date formats" 
+		 class="img-fluid w-90 mx-auto d-block rounded shadow-sm"> 
+	 </div>
+      </div>
+
+      <h4 class="fw-bold">4. Shut It Down</h4>
+      <p>
+      When finished, containers, networks, and volumes can be removed entirely. Run the following:
+      </p>
+	 <div class="code-box mb-4">
+	    <pre><code class="language-bash"> 
+docker-compose down -v
+	    </code></pre>
+	 </div>
+
+
+      <div class="code-box mb-4">
+	 <h4 class="fw-bold">5. Portability</h4>
+	    <p>
+	    One of Docker's biggest advantages is reproducibility. An image can be rebuilt from scratch at any time. GitHub Container Registry (ghcr.io) allows container images to be stored and shared. In summary, a personal access token is created and then used to authenticate with ghcr.io. From there, the workflow typically involves tagging the image, building and pushing it to the registry, and verifying that the image exists remotely. It will be available as a private image that can be pulled and run on any computer.
+      </div>
+
+      <div class="row align-items-start mb-4">
+	 <!-- LEFT SIDE -->
+	 <div class="col-md-9">
+	    <h4 class="fw-bold">Lessons Learned</h4>
+	    <p>
+	   This project took longer than I anticipated, largely because it took me time to understand user management and permission configurations. Discovering that the <code>jovyan</code> user already existed with a UID 1000 and GID 100 was part of the learning curve. Referencing Docker and Jupyter documentation clarified much of the confusion. Documentation isn't a fallback, but rather a starting point. 	
+	    </p>
+	 </div>
+
+	 <!-- RIGHT SIDE (larger image) -->
+	 <div class="col-md-3 text-md-end">
+	    <img src="assets/07_postgis/collina.jpg"
+		alt="hyprlock screen"
+		 class="article-img-full img-fluid">
+	 </div>
+
+
+	 <div class="mb-4">
+	    <p>
+	    This project wasn't just about match and mileage tracking. It was about building a portable data pipeline, managing environments cleanly, applying least-privilege security principles, and learning about spatial analytics. Refereeing teaches you that mistakes are inevitable, but growth comes from reviewing the match and improving the next call. Building systems is no different: each error, misconfiguration, and rebuild is just another chance to get the next decision right...hopefully :)
+	   </p>
+	 </div>
+
+
+   <!-- Clearfix to push button below floated image -->
+	   <div class="clearfix"></div>
+	 </div>
+
+	 <!-- Back Button pushed below everything -->
+	 <div class="text-center mt-5 pb-4">
+	   <a class="btn-back" href="projects.html">
+	     ← Back to Projects
+	   </a>
+	 </div>
+      </div>
+    </main>
+
+
+  <!-- FOOTER -->
+  <footer class="py-2" style="background-color: transparent;">
+     <div class="container px-5 text-center">
+	<div class="mb-2">
+	   <a class="small footer-link" href="index.html">Home</a>
+	   <span class="mx-2">&middot;</span>
+	   <a class="small footer-link" href="projects.html">Projects</a>
+	   <span class="mx-2">&middot;</span>
+	   <a class="small footer-link" href="contact.html">Contact</a>
+	</div>
+	<div class="small text-white copyright">&copy; Castro 2026</div>
+     </div>
+  </footer>
+
+    <!-- Scripts -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  // 1. Get article text
+  const articleText = document.querySelector(".article-content").innerText;
+
+  // 2. Count words
+  const wordCount = articleText.trim().split(/\s+/).length;
+
+  // 3. Reading time (average 200 words/min)
+  const readingTime = Math.ceil(wordCount / 200);
+
+  // 4. Insert values into the page
+  document.getElementById("article-reading-time").textContent =
+    `${readingTime} min read`;
+
+  document.getElementById("article-word-count").textContent =
+    `${wordCount} words`;
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
+
+
+
